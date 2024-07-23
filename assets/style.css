@@ -1,0 +1,135 @@
+/* Sobre */
+.sobre {
+    background-color: #f9f9f9;
+    padding: 50px 0; /* Espaçamento interno para o conteúdo */
+    margin-bottom: 40px;
+}
+
+.sobre .container {
+    max-width: 800px;
+    margin: 0 auto; /* Centraliza o conteúdo horizontalmente */
+}
+
+.sobre h1 {
+    text-align: center; /* Alinha texto ao centro */
+    color: #333;
+}
+
+.sobre p {
+    text-align: center; /* Alinha texto ao centro */
+    color: #777;
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .sobre .container {
+        padding: 0 15px; /* Adaptação para telas menores */
+    }
+}
+
+/* Catálogo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 50px;
+    background-color: #f2f2f2;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 25px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.column {
+    width: calc(50% - 20px); /* 50% do espaço com um pequeno gap entre colunas */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+.column:hover {
+    transform: translateY(-5px);
+}
+.column img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+@media (max-width: 768px) {
+    .column {
+        width: 100%; /* Coluna ocupa 100% do espaço em telas menores */
+        margin-bottom: 20px;
+    }
+}
+
+/* Rodapé */
+footer {
+    background-color: #222222;
+    color: #fff;
+    padding: 30px 0; /* Aumenta o padding para mais espaçamento */
+    text-align: center;
+    position: relative;
+    z-index: 1000;
+}
+
+.contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os itens */
+    padding: 20px;
+    gap: 20px; /* Adiciona espaçamento entre as seções */
+}
+
+.footer-section {
+    flex: 1; /* Cada seção ocupa a mesma largura */
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.footer-section h5 {
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none; /* Remove as bordas da lista */
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0; /* Espaçamento entre os itens da lista */
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline; /* Adiciona um efeito de sublinhado ao passar o mouse */
+}
+
+.footer-section p {
+    margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+    .contact {
+        flex-direction: column;
+        align-items: center; /* Centraliza as seções em telas menores */
+    }
+
+    .footer-section {
+        text-align: center; /* Centraliza o texto em telas menores */
+    }
+}
+
+.logo {
+    width: 200px; /* Define a largura desejada */
+    height: auto; /* Mantém a proporção da imagem */
+}
