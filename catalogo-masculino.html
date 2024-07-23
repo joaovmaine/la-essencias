@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Perfumes</title>
+    <meta name="author" content="João Victor Maine">
+    <!-- <meta name="description"> -->
+    <!-- <meta name="keywords"> -->
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding-top: 150px;
+        }
+        .container {
+            /* max-width: 800px; */
+            margin: 20px auto;
+            padding: 20px;
+            display: grid;
+            grid-gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+        .produto {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .produto:hover {
+            transform: translateY(-5px);
+        }
+        .produto img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px 8px 0 0;
+        }
+        .produto .info {
+            padding: 15px;
+        }
+        .produto .nome {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .produto .descricao {
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        .produto .preco {
+            font-size: 1.1em;
+            color: #27ae60;
+            font-weight: bold;
+        }
+        .produto .btn {
+            display: block;
+            width: 100%;
+            padding: 10px 0;
+            text-align: center;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 0 0 8px 8px;
+            transition: background-color 0.3s ease;
+        }
+        .produto .btn:hover {
+            background-color: #2980b9;
+        }
+
+
+
+/* Rodapé */
+footer {
+    background-color: #222222;
+    color: #fff;
+    padding: 30px 0; /* Aumenta o padding para mais espaçamento */
+    text-align: center;
+    position: relative;
+    z-index: 1000;
+}
+
+.contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os itens */
+    padding: 20px;
+    gap: 20px; /* Adiciona espaçamento entre as seções */
+}
+
+.footer-section {
+    flex: 1; /* Cada seção ocupa a mesma largura */
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.footer-section h5 {
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none; /* Remove as bordas da lista */
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0; /* Espaçamento entre os itens da lista */
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline; /* Adiciona um efeito de sublinhado ao passar o mouse */
+}
+
+.footer-section p {
+    margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+    .contact {
+        flex-direction: column;
+        align-items: center; /* Centraliza as seções em telas menores */
+    }
+
+    .footer-section {
+        text-align: center; /* Centraliza o texto em telas menores */
+    }
+}
+
+.logo {
+    width: 200px; /* Define a largura desejada */
+    height: auto; /* Mantém a proporção da imagem */
+}
+</style>
+</head>
+
+<!-- Navbar -->
+<header>
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+            <img src="assets/images/logo-white.png" alt="Logo" style="height: 80px;">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">LA Essências</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="index.html">Página inicial</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="catalogo-masculino.html">Catálogo Masculino</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="catalogo-feminino.html">Catálogo Feminino</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">WhatsApp</a>
+                  </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+</header>
+
+<body>
+    <h1 style="text-align: center;">Catálogo Masculino</h1>
+
+    <div class="container">
+        <div class="produto">
+            <img src="assets/images/2.png" alt="Perfume 1">
+            <div class="info">
+                <div class="nome">Nome do Perfume 1</div>
+                <div class="descricao">Descrição do Perfume 1</div>
+                <div class="preco">R$ 100,00</div>
+                <a href="#" class="btn">Saiba Mais</a>
+            </div>
+        </div>
+
+        <div class="produto">
+            <img src="assets/images/2.png" alt="Perfume 2">
+            <div class="info">
+                <div class="nome">Nome do Perfume 2</div>
+                <div class="descricao">Descrição do Perfume 2</div>
+                <div class="preco">R$ 120,00</div>
+                <a href="#" class="btn">Saiba Mais</a>
+            </div>
+        </div>
+
+        <div class="produto">
+            <img src="assets/images/2.png" alt="Perfume 3">
+            <div class="info">
+                <div class="nome">Nome do Perfume 3</div>
+                <div class="descricao">Descrição do Perfume 3</div>
+                <div class="preco">R$ 120,00</div>
+                <a href="#" class="btn">Saiba Mais</a>
+            </div>
+        </div>
+
+        <div class="produto">
+            <img src="assets/images/2.png" alt="Perfume 4">
+            <div class="info">
+                <div class="nome">Nome do Perfume 4</div>
+                <div class="descricao">Descrição do Perfume 4</div>
+                <div class="preco">R$ 120,00</div>
+                <a href="#" class="btn">Saiba Mais</a>
+            </div>
+        </div>
+
+        <div class="produto">
+            <img src="assets/images/2.png" alt="Perfume 5">
+            <div class="info">
+                <div class="nome">Nome do Perfume 5</div>
+                <div class="descricao">Descrição do Perfume 5</div>
+                <div class="preco">R$ 120,00</div>
+                <a href="#" class="btn">Saiba Mais</a>
+            </div>
+        </div>
+
+        <div class="produto">
+            <img src="assets/images/2.png" alt="Perfume 6">
+            <div class="info">
+                <div class="nome">Nome do Perfume 6</div>
+                <div class="descricao">Descrição do Perfume 6</div>
+                <div class="preco">R$ 120,00</div>
+                <a href="#" class="btn">Saiba Mais</a>
+            </div>
+        </div>
+
+        <div class="produto">
+            <img src="assets/images/2.png" alt="Perfume 7">
+            <div class="info">
+                <div class="nome">Nome do Perfume 7</div>
+                <div class="descricao">Descrição do Perfume 7</div>
+                <div class="preco">R$ 120,00</div>
+                <a href="#" class="btn">Saiba Mais</a>
+            </div>
+        </div>
+
+        <div class="produto">
+            <img src="assets/images/2.png" alt="Perfume 8">
+            <div class="info">
+                <div class="nome">Nome do Perfume 8</div>
+                <div class="descricao">Descrição do Perfume 8</div>
+                <div class="preco">R$ 120,00</div>
+                <a href="#" class="btn">Saiba Mais</a>
+            </div>
+        </div>
+
+        <!-- Repita para os outros itens -->
+    </div>
+
+<!-- Rodapé -->
+<footer class="contact">
+    <img src="assets/images/logo-white.png" class="logo">
+
+    <div class="footer-section links">
+        <h5>Fale conosco</h5>
+        <p>(34) XXXX-XXXX | (34) XXXXX-XXXX<br>
+        R. XXXXX, XXX, Itapagipe - MG, 38240-000</p>
+    </div>
+
+    <div class="footer-section navigation">
+        <h5>Navegação</h5>
+        <ul>
+            <li><a href="index.html">Página Inicial</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="catalogo-masculino.html">Catálogo Masculino</a></li>
+            <li><a href="catalogo-feminino.html">Catálogo Feminino</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-section social">
+        <h5>Redes Sociais</h5>
+        <ul>
+            <li><a href="https://instagram.com/suapagina" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="https://facebook.com/suapagina" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-section copyright">
+        <p>&copy; 2024 LA Essências. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+</body>
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</html>
