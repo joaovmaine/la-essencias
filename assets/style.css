@@ -1,32 +1,3 @@
-/* Sobre */
-.sobre {
-    background-color: #f9f9f9;
-    padding: 50px 0; /* Espaçamento interno para o conteúdo */
-    margin-bottom: 40px;
-}
-
-.sobre .container {
-    max-width: 800px;
-    margin: 0 auto; /* Centraliza o conteúdo horizontalmente */
-}
-
-.sobre h1 {
-    text-align: center; /* Alinha texto ao centro */
-    color: #333;
-}
-
-.sobre p {
-    text-align: center; /* Alinha texto ao centro */
-    color: #777;
-    font-size: 18px;
-}
-
-@media (max-width: 768px) {
-    .sobre .container {
-        padding: 0 15px; /* Adaptação para telas menores */
-    }
-}
-
 /* Catálogo */
 body {
     font-family: Arial, sans-serif;
@@ -68,68 +39,83 @@ body {
     }
 }
 
+
+
 /* Rodapé */
 footer {
     background-color: #222222;
     color: #fff;
-    padding: 30px 0; /* Aumenta o padding para mais espaçamento */
+    padding: 30px 0;
     text-align: center;
     position: relative;
     z-index: 1000;
 }
 
-.contact {
+.contato {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Centraliza os itens */
+    justify-content: center;
     padding: 20px;
-    gap: 20px; /* Adiciona espaçamento entre as seções */
+    gap: 20px;
 }
 
-.footer-section {
-    flex: 1; /* Cada seção ocupa a mesma largura */
+.fale-conosco {
+    flex: 1;
     min-width: 200px;
     margin-bottom: 20px;
 }
 
-.footer-section h5 {
+.links {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.social {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.links h5, .social h5, .fale-conosco h5 {
     margin-bottom: 10px;
 }
 
-.footer-section ul {
-    list-style: none; /* Remove as bordas da lista */
+.links ul, .social ul {
+    list-style: none;
     padding: 0;
+    margin: 0;
 }
 
-.footer-section ul li {
-    margin: 5px 0; /* Espaçamento entre os itens da lista */
+.links ul li, .social ul li {
+    margin: 5px 0;
 }
 
-.footer-section ul li a {
+.links ul li a, .social ul li a {
     color: #fff;
     text-decoration: none;
 }
 
-.footer-section ul li a:hover {
-    text-decoration: underline; /* Adiciona um efeito de sublinhado ao passar o mouse */
+.links ul li a:hover, .social ul li a:hover {
+    text-decoration: underline;
 }
 
-.footer-section p {
+.copyright {
     margin: 5px 0;
 }
 
 @media (max-width: 768px) {
-    .contact {
+    .contato {
         flex-direction: column;
-        align-items: center; /* Centraliza as seções em telas menores */
+        align-items: center;
     }
 
-    .footer-section {
-        text-align: center; /* Centraliza o texto em telas menores */
+    .fale-conosco, .links, .social {
+        text-align: center;
     }
 }
 
 .logo {
-    width: 200px; /* Define a largura desejada */
-    height: auto; /* Mantém a proporção da imagem */
+    width: 200px;
+    height: auto;
 }
