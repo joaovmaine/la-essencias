@@ -1,0 +1,256 @@
+/* Definir uma fonte geral e tamanho */
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Títulos principais */
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    color: #000;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease; /* Aumentar a fonte ao passar o mouse */
+}
+
+/* Estilo dos títulos de seção com hover */
+h2:hover {
+    color: #8B0000; /* Cor vintage vinho */
+    transform: scale(1.05); /* Aumentar a fonte ao passar o mouse */
+}
+
+/* Ajustar parágrafos */
+p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    color: #555;
+    text-align: justify; /* Justificar parágrafos */
+}
+
+/* Botões */
+.btn {
+    background-color: #8B0000; /* Cor vintage vinho */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #6A0000; /* Cor de hover mais escura */
+}
+
+/* Estilos específicos para Catálogo Masculino e Feminino */
+#catalogo .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+#catalogo .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#catalogo .card img {
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+#catalogo .card-body {
+    padding: 20px;
+}
+
+#catalogo .card-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#catalogo .card-text {
+    font-size: 1.1em;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+#catalogo .btn-primary {
+    background-color: #4a3c31;
+    border-color: #4a3c31;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#catalogo .btn-primary:hover {
+    background-color: #333;
+    border-color: #333;
+}
+
+/* Adicionado do HTML */
+.navbar {
+    background-color: #8B0000; /* Cor vintage vinho */
+}
+
+.navbar-brand img {
+    width: 150px;
+}
+
+.nav-link {
+    color: #fff !important;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #FFC0CB; /* Cor vintage sutil para hover */
+}
+
+.carousel-inner img {
+    height: 500px;
+    object-fit: cover;
+}
+
+#produtos-destaque .highlight {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#produtos-destaque .highlight img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Grid de produtos */
+.container-produtos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Ajustado para 3 colunas */
+    gap: 20px; /* Espaçamento entre os itens */
+}
+
+.produto {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.produto:hover {
+    transform: translateY(-5px);
+}
+
+.produto img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+}
+
+.produto .info {
+    padding: 10px;
+}
+
+.produto .nome {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.produto .descricao {
+    font-size: 0.8em;
+    margin-bottom: 10px;
+}
+
+.produto .preco {
+    font-size: 1.2em;
+    color: #c0392b;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.produto .btn {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background-color: #8B0000; /* Cor vintage vinho */
+    color: #f8f9fa; /* Texto claro para melhor contraste */
+    padding: 40px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+footer h5 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+footer p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+footer ul {
+    padding: 0;
+    list-style: none;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+footer ul li a {
+    color: #f8f9fa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer ul li a:hover {
+    color: #FFC0CB; /* Cor vintage sutil para hover */
+}
+
+footer .social-icons a {
+    color: #f8f9fa;
+    margin-right: 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: #FFC0CB; /* Destaque ao passar o mouse */
+    transform: scale(1.2); /* Pequeno efeito de zoom */
+}
+
+footer .bg-dark {
+    background-color: #1a1a1a; /* Fundo ainda mais escuro para o rodapé final */
+    color: #f8f9fa;
+}
+
+footer .container p {
+    margin-bottom: 0;
+    font-size: 0.8rem;
+    color: #ced4da;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    footer {
+        text-align: center;
+    }
+    footer .col-md-3 {
+        margin-bottom: 30px;
+    }
+}
+
