@@ -1,314 +1,219 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding-top: 30px; /* Margem da Navbar x Carousel */
-    background-color: #f2f2f2;
-}
-
-/* Rodapé */
-footer {
-    background-color: #4a3c31;
-    color: #fff;
-    padding: 30px 0;
-    text-align: center;
-    position: relative;
-    z-index: 1000;
-}
-
-.contato {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-    gap: 20px;
-}
-
-.fale-conosco, .links, .social {
-    flex: 1;
-    min-width: 200px;
-    margin-bottom: 20px;
-}
-
-.links h5, .social h5, .fale-conosco h5 {
-    margin-bottom: 10px;
-}
-
-.links ul, .social ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.links ul li, .social ul li {
-    margin: 5px 0;
-}
-
-.links ul li a, .social ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.links ul li a:hover, .social ul li a:hover {
-    text-decoration: underline;
-}
-
-.copyright {
-    margin: 5px 0;
-}
-
-@media (max-width: 768px) {
-    .contato {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .fale-conosco, .links, .social {
-        text-align: center;
-    }
-}
-
-.logo {
-    width: 200px;
-    height: auto;
-}
-
-/* Seção Sobre a Empresa */
-#sobre {
-    padding: 50px 0;
-}
-
-#sobre h2 {
-    margin-bottom: 20px;
-    color: #4a3c31;
-}
-
-#sobre p {
-    font-size: 1.1em;
-    color: #555;
-}
-
-#sobre img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Seção Contato */
-#contato {
-    padding: 50px 0;
-    background-color: #f2f2f2;
-}
-
-#contato h2 {
-    margin-bottom: 20px;
-    color: #4a3c31;
-}
-
-#contato .form-label {
-    font-weight: bold;
-    color: #333;
-}
-
-#contato .form-control {
-    border-radius: 5px;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-}
-
-#contato .btn-primary {
-    background-color: #4a3c31;
-    border-color: #4a3c31;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-#contato .btn-primary:hover {
-    background-color: #333;
-    border-color: #333;
-}
-
-@media (max-width: 768px) {
-    #contato .row {
-        flex-direction: column;
-    }
-
-    #contato .col-md-6 {
-        margin-bottom: 20px;
-    }
-}
-
-/* Estilos específicos para Catálogo Masculino e Feminino */
-#catalogo .card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-}
-
-#catalogo .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-#catalogo .card img {
-    border-top-left-radius: calc(0.25rem - 1px);
-    border-top-right-radius: calc(0.25rem - 1px);
-    height: auto;
-    max-height: 300px;
-    object-fit: cover;
-}
-
-#catalogo .card-body {
-    padding: 20px;
-}
-
-#catalogo .card-title {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-#catalogo .card-text {
-    font-size: 1.1em;
-    color: #777;
-    margin-bottom: 20px;
-}
-
-#catalogo .btn-primary {
-    background-color: #4a3c31;
-    border-color: #4a3c31;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-#catalogo .btn-primary:hover {
-    background-color: #333;
-    border-color: #333;
+/* Tema Claro (padrão) */
+:root {
+    --cor-primaria: #333;
+    --cor-secundaria: #555;
+    --cor-terciaria: #777;
+    --cor-fundo: #f9f9f9;
+    --cor-footer: #000;
+    --cor-footer-texto: #ffffff;
+    --cor-link: #e0e0e0;
 }
 
 /* Estilos gerais */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    margin: 0;
-    padding-top: 0px; /* Ajuste se necessário */
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: var(--cor-fundo);
+    color: var(--cor-primaria);
 }
 
-/* Seção de Produtos */
-#produtos {
-    padding: 50px 20px;
-}
-
-#produtos h2 {
-    font-size: 2em;
-    font-weight: bold;
-    color: #4a3c31;
-    margin-bottom: 40px;
-}
-
-/* Grid de produtos */
-.container-produtos {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 colunas */
-    gap: 20px; /* Espaçamento entre os itens */
-}
-
-.produto {
-    background-color: #f4f4f4;
-    border: 1px solid #ddd;
-    padding: 10px;
+h1, h2, h3 {
+    color: var(--cor-primaria);
     margin-bottom: 20px;
+}
+
+p {
+    color: var(--cor-terciaria);
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+a {
+    color: var(--cor-link);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--cor-footer);
+}
+
+.navbar a {
+    color: var(--cor-footer-texto);
+}
+
+/* Footer */
+footer {
+    background-color: var(--cor-footer);
+    color: var(--cor-footer-texto);
+    padding: 20px 0;
+}
+
+/* Sobre */
+.sobre {
+    padding: 50px 0;
+    margin-top: 100px;
+}
+
+.sobre .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.sobre h1 {
     text-align: center;
+}
+
+.sobre p {
+    text-align: center;
+    font-size: 18px;
+}
+
+/* Estilos para Missão, Visão e Valores */
+.mvv-section {
+    background-color: var(--cor-fundo);
+    padding: 50px 0;
+}
+
+.mvv-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 15px;
+}
+
+.mvv-title {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: var(--cor-primaria);
+}
+
+.mvv-div {
+    margin-bottom: 30px;
+}
+
+.mvv-div h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: var(--cor-secundaria);
+}
+
+/* Estilo dos produtos */
+.produto {
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-.produto:hover {
-    transform: translateY(-5px);
+    transition: transform 0.3s;
+    background-color: #f4f4f4; /* Cor de fundo padrão */
+    border: 1px solid #ddd; /* Borda padrão */
+    text-align: center;
 }
 
 .produto img {
     width: 100%;
     height: auto;
-    border-radius: 8px 8px 0 0;
 }
 
-.produto .info {
-    padding: 10px;
+.info {
+    padding: 15px;
+    text-align: center;
 }
 
-.produto .nome {
-    font-size: 1.2em;
+.nome {
     font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.produto .descricao {
-    font-size: 0.8em;
-    margin-bottom: 10px;
-}
-
-.produto .preco {
     font-size: 1.2em;
-    color: #c0392b;
-    font-weight: bold;
+    color: var(--cor-primaria);
+}
+
+.descricao {
+    font-size: 0.9em;
+    color: var(--cor-terciaria);
+}
+
+.preco {
+    font-size: 1.1em;
+    color: var(--cor-primaria);
     margin: 10px 0;
 }
 
-.produto .btn {
-    background-color: #3498db;
-    color: #fff;
+.btn {
+    background-color: var(--cor-primaria);
+    color: var(--cor-footer-texto);
+    border: none;
     padding: 10px 20px;
-    text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
 }
 
-.produto .btn:hover {
-    background-color: #2980b9;
+.btn:hover {
+    background-color: var(--cor-secundaria);
 }
 
-/* Responsividade */
-@media (max-width: 1200px) {
-    .container-produtos {
-        grid-template-columns: repeat(4, 1fr); /* 4 colunas em telas menores */
+/* Media Queries */
+@media (max-width: 768px) {
+    .sobre .container {
+        padding: 0 15px;
     }
 }
 
-@media (max-width: 900px) {
-    .container-produtos {
-        grid-template-columns: repeat(3, 1fr); /* 3 colunas em telas ainda menores */
-    }
+/* Tema Escuro */
+body.theme-dark {
+    --cor-primaria: #ffffff; /* Texto branco */
+    --cor-secundaria: #cccccc; /* Cinza claro */
+    --cor-terciaria: #bbbbbb; /* Cinza ainda mais claro */
+    --cor-fundo: #000000; /* Fundo preto */
+    --cor-footer: #000; /* Footer preto */
+    --cor-footer-texto: #ffffff; /* Texto branco no footer */
+    --cor-link: #ffffff; /* Links brancos no tema escuro */
 }
 
-@media (max-width: 600px) {
-    .container-produtos {
-        grid-template-columns: 1fr; /* 1 coluna em telas pequenas */
-    }
+/* Navbar e Footer no tema escuro */
+body.theme-dark .navbar {
+    background-color: var(--cor-footer); /* Navbar preta no tema escuro */
 }
 
-/* Adicionado do HTML */
-.navbar {
-    background-color: #000;
+body.theme-dark footer {
+    background-color: var(--cor-footer); /* Footer preto no tema escuro */
+    color: var(--cor-footer-texto); /* Texto branco no footer no tema escuro */
 }
 
-.navbar-brand img {
-    width: 150px;
+/* Títulos no tema escuro */
+body.theme-dark h1,
+body.theme-dark h2 {
+    color: var(--cor-primaria); /* Títulos brancos no tema escuro */
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Efeito de sombra nos títulos */
 }
 
-.nav-link {
-    color: #fff !important;
-    font-weight: bold;
+/* Outros elementos que podem precisar de ajustes no tema escuro */
+body.theme-dark a {
+    color: var(--cor-link); /* Links brancos no tema escuro */
 }
 
-.carousel-inner img {
-    height: 500px;
-    object-fit: cover;
+body.theme-dark p {
+    color: var(--cor-secundaria); /* Texto dos parágrafos em cinza claro */
 }
 
-#produtos-destaque .highlight {
-    text-align: center;
-    margin-bottom: 30px;
+body.theme-dark .produto {
+    background-color: #333; /* Cor de fundo do produto no tema escuro */
+    border-color: #444; /* Cor da borda no tema escuro */
 }
 
-#produtos-destaque .highlight img {
-    max-width: 100%;
-    height: auto;
+body.theme-dark .produto .btn {
+    background-color: #444; /* Cor do botão no tema escuro */
+    color: #fff; /* Texto do botão no tema escuro */
+}
+
+/* Ajuste o botão de alternância na navbar */
+#theme-toggle {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    margin-right: 15px;
+}
+
+#theme-toggle:hover {
+    color: #ccc;
 }

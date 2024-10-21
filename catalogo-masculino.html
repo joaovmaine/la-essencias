@@ -1,340 +1,398 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de Perfumes</title>
-    <meta name="author" content="João Victor Maine">
-    <!-- <meta name="description"> -->
-    <!-- <meta name="keywords"> -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <style>
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    margin: 0;
-    padding-top: 150px;
-}
-
-/* Navbar */
-.navbar {
-    background: linear-gradient(to right, #4a3c31, #bfa16f);
-}
-
-.navbar-brand img {
-    height: 75px;
-}
-
-.navbar-nav .nav-link {
-    color: #fff !important;
-}
-
-.navbar-nav .nav-link:hover {
-    color: #f1f1f1 !important;
-}
-
-.container {
-    /* max-width: 800px; */
-    margin: 20px auto;
-    padding: 20px;
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.produto {
-    background-color: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-.produto:hover {
-    transform: translateY(-5px);
-}
-
-.produto img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px 8px 0 0;
-}
-
-.produto .info {
-    padding: 15px;
-}
-
-.produto .nome {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.produto .descricao {
-    font-size: 0.9em;
-    margin-bottom: 10px;
-}
-
-.produto .preco {
-    font-size: 1.1em;
-    color: #27ae60;
-    font-weight: bold;
-}
-
-.produto .btn {
-    display: block;
-    width: 100%;
-    padding: 10px 0;
-    text-align: center;
-    background-color: #3498db;
-    color: #fff;
-    text-decoration: none;
-    border: none;
-    border-radius: 0 0 8px 8px;
-    transition: background-color 0.3s ease;
-}
-
-.produto .btn:hover {
-    background-color: #2980b9;
-}
-
-/* Rodapé */
-footer {
-    background-color: #4a3c31;
-    color: #fff;
-    padding: 30px 0;
-    text-align: center;
-    position: relative;
-    z-index: 1000;
-}
-
-.contato {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-    gap: 20px;
-}
-
-.fale-conosco {
-    flex: 1;
-    min-width: 200px;
-    margin-bottom: 20px;
-}
-
-.links {
-    flex: 1;
-    min-width: 200px;
-    margin-bottom: 20px;
-}
-
-.social {
-    flex: 1;
-    min-width: 200px;
-    margin-bottom: 20px;
-}
-
-.links h5, .social h5, .fale-conosco h5 {
-    margin-bottom: 10px;
-}
-
-.links ul, .social ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.links ul li, .social ul li {
-    margin: 5px 0;
-}
-
-.links ul li a, .social ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.links ul li a:hover, .social ul li a:hover {
-    text-decoration: underline;
-}
-
-.copyright {
-    margin: 5px 0;
-}
-
-@media (max-width: 768px) {
-    .contato {
-        flex-direction: column;
-        align-items: center;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LA Essências | Perfumaria e Essências</title>
+<meta name="author" content="João Victor Maine">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="icon" href="assets/images/favicon.png" type="image/png">
+<style>
+    /* Cores */
+    :root {
+        --cor-primaria: #333;
+        --cor-secundaria: #555;
+        --cor-terciaria: #777;
+        --cor-fundo: #f9f9f9;
+        --cor-footer: #000;
+        --cor-footer-texto: #ffffff;
+        --cor-link: #e0e0e0;
     }
 
-    .fale-conosco, .links, .social {
+    /* Estilos gerais */
+    body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        background-color: var(--cor-fundo);
+        color: var(--cor-primaria);
+    }
+
+    h1, h2, h3 {
+        color: var(--cor-primaria);
+        margin-bottom: 20px;
+    }
+
+    p {
+        color: var(--cor-terciaria);
+        font-size: 1.1em;
+        margin-bottom: 15px;
+    }
+
+    a {
+        color: var(--cor-link);
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    /* Navbar */
+    .navbar {
+        background-color: var(--cor-footer);
+    }
+
+    .navbar a {
+        color: var(--cor-footer-texto);
+    }
+
+    /* Footer */
+    footer {
+        background-color: var(--cor-footer);
+        color: var(--cor-footer-texto);
+        padding: 20px 0;
+    }
+
+    /* Sobre */
+    .sobre {
+        padding: 50px 0;
+        margin-top: 100px;
+    }
+
+    .sobre .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .sobre h1 {
+        text-align: center;
+        font-size: 2.5em;
+    }
+
+    .sobre p {
+        text-align: center;
+        font-size: 18px;
+    }
+
+    /* Estilos para Missão, Visão e Valores */
+    .mvv-section {
+        background-color: var(--cor-fundo);
+        padding: 50px 0;
+    }
+
+    .mvv-container {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 0 15px;
+    }
+
+    .mvv-title {
+        font-size: 2em;
+        margin-bottom: 30px;
+        color: var(--cor-primaria);
+    }
+
+    .mvv-div {
+        margin-bottom: 30px;
+    }
+
+    .mvv-div h2 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: var(--cor-secundaria);
+    }
+
+    /* Estilo dos produtos */
+    .produto {
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.3s;
+    }
+
+    .produto img {
+        width: 100%;
+        height: auto;
+    }
+
+    .info {
+        padding: 15px;
         text-align: center;
     }
-}
 
-.logo {
-    width: 200px;
-    height: auto;
-}
+    .nome {
+        font-weight: bold;
+        font-size: 1.2em;
+        color: var(--cor-primaria);
+    }
 
+    .descricao {
+        font-size: 0.9em;
+        color: var(--cor-terciaria);
+    }
+
+    .preco {
+        font-size: 1.1em;
+        color: var(--cor-primaria);
+        margin: 10px 0;
+    }
+
+    .btn {
+        background-color: var(--cor-primaria);
+        color: var(--cor-footer-texto);
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+
+    .btn:hover {
+        background-color: var(--cor-secundaria);
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+        .sobre .container {
+            padding: 0 15px;
+        }
+    }
 </style>
 </head>
 
 <body>
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<nav class="navbar navbar-dark fixed-top" style="background-color: black;">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
-            <img src="assets/images/logo.png" alt="Logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="index.html">LA Essências</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
+    </div>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarNav" aria-labelledby="navbarNavLabel" style="background-color: black; color: white;">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="navbarNavLabel" style="color: var(--cor-texto-footer);">Menu</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.html">Página Inicial</a>
+                    <a class="nav-link active" href="index.html" style="color: var(--cor-texto-navbar);">Página Inicial</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="catalogo-masculino.html">Catálogo Masculino</a>
+                    <a class="nav-link" href="catalogo-masculino.html" style="color: var(--cor-texto-navbar);">Catálogo Masculino</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="catalogo-feminino.html">Catálogo Feminino</a>
+                    <a class="nav-link" href="catalogo-feminino.html" style="color: var(--cor-texto-navbar);">Catálogo Feminino</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">WhatsApp</a>
+                    <a class="nav-link" href="https://wa.me/5534991407200" style="color: var(--cor-texto-navbar);">Nosso WhatsApp</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
 
+<!-- Catálogo Masculino -->
+<section id="produtos-masculinos" class="container">
+    <h2 class="text-center mb-4" style="color: rgb(107, 7, 0); font-weight: bold;">Novidades Masculinas</h2>
+    <div class="row">
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/escuro.png" alt="Perfume 1">
+                <div class="info">
+                    <div class="nome">Golden Petals</div>
+                    <div class="descricao">Floral luminoso com notas quentes de âmbar</div>
+                    <div class="preco">R$ 149,90</div>
+                    <a href="finalizacao.html" class="btn btn-primary">Saiba Mais</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/escuro.png" alt="Perfume 2">
+                <div class="info">
+                    <div class="nome">Eternal Dream</div>
+                    <div class="descricao">Um perfume etéreo e suave que perdura na pele</div>
+                    <div class="preco">R$ 149,90</div>
+                    <a href="finalizacao.html" class="btn btn-primary">Saiba Mais</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/escuro.png" alt="Perfume 3">
+                <div class="info">
+                    <div class="nome">Rosewood Whisper</div>
+                    <div class="descricao">Amadeirado com uma pitada de rosas suaves.</div>
+                    <div class="preco">R$ 149,90</div>
+                    <a href="finalizacao.html" class="btn btn-primary">Saiba Mais</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/escuro.png" alt="Perfume 4">
+                <div class="info">
+                    <div class="nome">Rosewood Whisper</div>
+                    <div class="descricao">Amadeirado com uma pitada de rosas suaves.</div>
+                    <div class="preco">R$ 149,90</div>
+                    <a href="finalizacao.html" class="btn btn-primary">Saiba Mais</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/escuro.png" alt="Perfume 5">
+                <div class="info">
+                    <div class="nome">Rosewood Whisper</div>
+                    <div class="descricao">Amadeirado com uma pitada de rosas suaves.</div>
+                    <div class="preco">R$ 149,90</div>
+                    <a href="finalizacao.html" class="btn btn-primary">Saiba Mais</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/escuro.png" alt="Perfume 6">
+                <div class="info">
+                    <div class="nome">Rosewood Whisper</div>
+                    <div class="descricao">Amadeirado com uma pitada de rosas suaves.</div>
+                    <div class="preco">R$ 149,90</div>
+                    <a href="finalizacao.html" class="btn btn-primary">Saiba Mais</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/escuro.png" alt="Perfume 7">
+                <div class="info">
+                    <div class="nome">Rosewood Whisper</div>
+                    <div class="descricao">Amadeirado com uma pitada de rosas suaves.</div>
+                    <div class="preco">R$ 149,90</div>
+                    <a href="finalizacao.html" class="btn btn-primary">Saiba Mais</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/escuro.png" alt="Perfume 8">
+                <div class="info">
+                    <div class="nome">Rosewood Whisper</div>
+                    <div class="descricao">Amadeirado com uma pitada de rosas suaves.</div>
+                    <div class="preco">R$ 149,90</div>
+                    <a href="finalizacao.html" class="btn btn-primary">Saiba Mais</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/escuro.png" alt="Perfume 9">
+                <div class="info">
+                    <div class="nome">Rosewood Whisper</div>
+                    <div class="descricao">Amadeirado com uma pitada de rosas suaves.</div>
+                    <div class="preco">R$ 149,90</div>
+                    <a href="finalizacao.html" class="btn btn-primary">Saiba Mais</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/escuro.png" alt="Perfume 10">
+                <div class="info">
+                    <div class="nome">Rosewood Whisper</div>
+                    <div class="descricao">Amadeirado com uma pitada de rosas suaves.</div>
+                    <div class="preco">R$ 149,90</div>
+                    <a href="finalizacao.html" class="btn btn-primary">Saiba Mais</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/escuro.png" alt="Perfume 11">
+                <div class="info">
+                    <div class="nome">Rosewood Whisper</div>
+                    <div class="descricao">Amadeirado com uma pitada de rosas suaves.</div>
+                    <div class="preco">R$ 149,90</div>
+                    <a href="finalizacao.html" class="btn btn-primary">Saiba Mais</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/escuro.png" alt="Perfume 12">
+                <div class="info">
+                    <div class="nome">Rosewood Whisper</div>
+                    <div class="descricao">Amadeirado com uma pitada de rosas suaves.</div>
+                    <div class="preco">R$ 149,90</div>
+                    <a href="finalizacao.html" class="btn btn-primary">Saiba Mais</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-
-<!-- Catálogo -->
-    <h1 style="text-align: center;">Catálogo Masculino</h1>
-
+<!-- Footer -->
+<footer class="bg-black text-light pt-4">
     <div class="container">
-        <div class="produto">
-            <img src="assets/images/2.png" alt="Perfume 1">
-            <div class="info">
-                <div class="nome">Nome do Perfume 1</div>
-                <div class="descricao">Descrição do Perfume 1</div>
-                <div class="preco">R$ 100,00</div>
-                <a href="#" class="btn">Saiba Mais</a>
+        <div class="row text-center text-md-start">
+            <!-- Seção LA Essências -->
+            <div class="col-md-3 mb-4">
+                <h5 class="text-uppercase">LA Essências</h5>
+                <p>Perfumes e essências de qualidade que definem seu estilo.</p>
+            </div>
+
+            <!-- Seção Navegação -->
+            <div class="col-md-3 mb-4">
+                <h5 class="text-uppercase">Navegação</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html" class="text-light text-decoration-none">Página Inicial</a></li>
+                    <li><a href="catalogo-masculino.html" class="text-light text-decoration-none">Catálogo Masculino</a></li>
+                    <li><a href="catalogo-feminino.html" class="text-light text-decoration-none">Catálogo Feminino</a></li>
+                </ul>
+            </div>
+
+            <!-- Seção Contato -->
+            <div class="col-md-3 mb-4">
+                <h5 class="text-uppercase">Contato</h5>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-phone-alt"></i> (34) 99140-7200</li>
+                    <li><i class="fas fa-envelope"></i> contatolaessencias@gmail.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Itapagipe/MG</li>
+                </ul>
+            </div>
+
+            <!-- Seção Redes Sociais -->
+            <div class="col-md-3 mb-4">
+                <h5 class="text-uppercase">Siga-nos</h5>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/la.officialperfumes/" class="text-light text-decoration-none">Instagram</a>
+                </div>
             </div>
         </div>
 
-        <div class="produto">
-            <img src="assets/images/2.png" alt="Perfume 2">
-            <div class="info">
-                <div class="nome">Nome do Perfume 2</div>
-                <div class="descricao">Descrição do Perfume 2</div>
-                <div class="preco">R$ 120,00</div>
-                <a href="#" class="btn">Saiba Mais</a>
+        <!-- Linha divisória -->
+        <hr class="bg-light">
+
+        <!-- Créditos finais -->
+        <div class="row">
+            <div class="col text-center">
+                <p class="mb-0">© 2024 LA Essências. Todos os direitos reservados.</p>
             </div>
         </div>
-
-        <div class="produto">
-            <img src="assets/images/2.png" alt="Perfume 3">
-            <div class="info">
-                <div class="nome">Nome do Perfume 3</div>
-                <div class="descricao">Descrição do Perfume 3</div>
-                <div class="preco">R$ 120,00</div>
-                <a href="#" class="btn">Saiba Mais</a>
-            </div>
-        </div>
-
-        <div class="produto">
-            <img src="assets/images/2.png" alt="Perfume 4">
-            <div class="info">
-                <div class="nome">Nome do Perfume 4</div>
-                <div class="descricao">Descrição do Perfume 4</div>
-                <div class="preco">R$ 120,00</div>
-                <a href="#" class="btn">Saiba Mais</a>
-            </div>
-        </div>
-
-        <div class="produto">
-            <img src="assets/images/2.png" alt="Perfume 5">
-            <div class="info">
-                <div class="nome">Nome do Perfume 5</div>
-                <div class="descricao">Descrição do Perfume 5</div>
-                <div class="preco">R$ 120,00</div>
-                <a href="#" class="btn">Saiba Mais</a>
-            </div>
-        </div>
-
-        <div class="produto">
-            <img src="assets/images/2.png" alt="Perfume 6">
-            <div class="info">
-                <div class="nome">Nome do Perfume 6</div>
-                <div class="descricao">Descrição do Perfume 6</div>
-                <div class="preco">R$ 120,00</div>
-                <a href="#" class="btn">Saiba Mais</a>
-            </div>
-        </div>
-
-        <div class="produto">
-            <img src="assets/images/2.png" alt="Perfume 7">
-            <div class="info">
-                <div class="nome">Nome do Perfume 7</div>
-                <div class="descricao">Descrição do Perfume 7</div>
-                <div class="preco">R$ 120,00</div>
-                <a href="#" class="btn">Saiba Mais</a>
-            </div>
-        </div>
-
-        <div class="produto">
-            <img src="assets/images/2.png" alt="Perfume 8">
-            <div class="info">
-                <div class="nome">Nome do Perfume 8</div>
-                <div class="descricao">Descrição do Perfume 8</div>
-                <div class="preco">R$ 120,00</div>
-                <a href="#" class="btn">Saiba Mais</a>
-            </div>
-        </div>
-
-        <!-- Repita para os outros itens -->
-    </div>
-
-
-
-<!-- Rodapé -->
-<footer class="contato">
-    <img src="assets/images/logo.png" class="logo" alt="Logo">
-
-    <div class="fale-conosco">
-        <h5>Fale conosco</h5>
-        <p>(34) XXXX-XXXX | (34) XXXXX-XXXX<br>
-        R. XXXXX, XXX, Itapagipe - MG, 38240-000</p>
-    </div>
-    <div class="links">
-        <h5>Navegação</h5>
-        <ul>
-            <li><a href="index.html">Página Inicial</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
-            <li><a href="catalogo-masculino.html">Catálogo Masculino</a></li>
-            <li><a href="catalogo-feminino.html">Catálogo Feminino</a></li>
-            <li><a href="#">Contato</a></li>
-        </ul>
-    </div>
-    <div class="social">
-        <h5>Redes Sociais</h5>
-        <ul>
-            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
-            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
-        </ul>
-    </div>
-    <div class="copyright">
-        <p>&copy; 2024 LA Essências. Todos os direitos reservados.</p>
     </div>
 </footer>
 
-
-
-<!-- JavaScript Bootstrap-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
