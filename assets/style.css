@@ -1,12 +1,13 @@
-/* Tema Claro (padrão) */
+/* Tema Claro */
 :root {
-    --cor-primaria: #333;
-    --cor-secundaria: #555;
-    --cor-terciaria: #777;
-    --cor-fundo: #f9f9f9;
-    --cor-footer: #000;
-    --cor-footer-texto: #ffffff;
-    --cor-link: #e0e0e0;
+    --cor-primaria: #2d3436; /* Texto primário (cinza escuro) */
+    --cor-secundaria: #636e72; /* Cinza médio */
+    --cor-terciaria: #a1b0b5; /* Cinza claro */
+    --cor-fundo: #f0f4f8; /* Fundo suave (quase branco) */
+    --cor-footer: #0984e3; /* Azul vibrante para o footer */
+    --cor-footer-texto: #ffffff; /* Texto branco no footer */
+    --cor-link: #0984e3; /* Links com a mesma cor do footer */
+    --cor-botao: #00b894; /* Cor verde suave para botões */
 }
 
 /* Estilos gerais */
@@ -15,11 +16,13 @@ body {
     line-height: 1.6;
     background-color: var(--cor-fundo);
     color: var(--cor-primaria);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3 {
     color: var(--cor-primaria);
     margin-bottom: 20px;
+    transition: color 0.3s ease;
 }
 
 p {
@@ -31,15 +34,18 @@ p {
 a {
     color: var(--cor-link);
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 a:hover {
     text-decoration: underline;
+    color: #55c0a0; /* Cor de hover mais suave */
 }
 
 /* Navbar */
 .navbar {
     background-color: var(--cor-footer);
+    transition: background-color 0.3s ease;
 }
 
 .navbar a {
@@ -51,6 +57,7 @@ footer {
     background-color: var(--cor-footer);
     color: var(--cor-footer-texto);
     padding: 20px 0;
+    transition: background-color 0.3s ease;
 }
 
 /* Sobre */
@@ -106,10 +113,16 @@ footer {
 .produto {
     border-radius: 8px;
     overflow: hidden;
-    transition: transform 0.3s;
-    background-color: #f4f4f4; /* Cor de fundo padrão */
-    border: 1px solid #ddd; /* Borda padrão */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #ffffff; /* Fundo branco para os produtos */
+    border: 1px solid #ddd; /* Borda leve e neutra */
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.produto:hover {
+    transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais forte no hover */
 }
 
 .produto img {
@@ -130,7 +143,7 @@ footer {
 
 .descricao {
     font-size: 0.9em;
-    color: var(--cor-terciaria);
+    color: var(--cor-secundaria);
 }
 
 .preco {
@@ -140,15 +153,16 @@ footer {
 }
 
 .btn {
-    background-color: var(--cor-primaria);
-    color: var(--cor-footer-texto);
+    background-color: var(--cor-botao);
+    color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-    background-color: var(--cor-secundaria);
+    background-color: #55c0a0; /* Cor de hover mais clara */
 }
 
 /* Media Queries */
@@ -160,49 +174,77 @@ footer {
 
 /* Tema Escuro */
 body.theme-dark {
-    --cor-primaria: #ffffff; /* Texto branco */
-    --cor-secundaria: #cccccc; /* Cinza claro */
-    --cor-terciaria: #bbbbbb; /* Cinza ainda mais claro */
-    --cor-fundo: #000000; /* Fundo preto */
-    --cor-footer: #000; /* Footer preto */
+    --cor-primaria: #e0e0e0; /* Texto claro */
+    --cor-secundaria: #b0bec5; /* Cinza claro */
+    --cor-terciaria: #999; /* Cinza mais escuro */
+    --cor-fundo: #121212; /* Fundo preto intenso */
+    --cor-footer: #333; /* Fundo do footer escuro */
     --cor-footer-texto: #ffffff; /* Texto branco no footer */
-    --cor-link: #ffffff; /* Links brancos no tema escuro */
+    --cor-link: #1e90ff; /* Links azuis vibrantes */
+    --cor-botao: #00b894; /* Botões em verde suave */
 }
 
-/* Navbar e Footer no tema escuro */
-body.theme-dark .navbar {
-    background-color: var(--cor-footer); /* Navbar preta no tema escuro */
+/* Estilos gerais */
+body.theme-dark {
+    background-color: var(--cor-fundo);
+    color: var(--cor-primaria);
 }
 
-body.theme-dark footer {
-    background-color: var(--cor-footer); /* Footer preto no tema escuro */
-    color: var(--cor-footer-texto); /* Texto branco no footer no tema escuro */
-}
-
-/* Títulos no tema escuro */
-body.theme-dark h1,
-body.theme-dark h2 {
-    color: var(--cor-primaria); /* Títulos brancos no tema escuro */
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Efeito de sombra nos títulos */
-}
-
-/* Outros elementos que podem precisar de ajustes no tema escuro */
-body.theme-dark a {
-    color: var(--cor-link); /* Links brancos no tema escuro */
+body.theme-dark h1, body.theme-dark h2, body.theme-dark h3 {
+    color: var(--cor-primaria);
 }
 
 body.theme-dark p {
-    color: var(--cor-secundaria); /* Texto dos parágrafos em cinza claro */
+    color: var(--cor-secundaria);
 }
 
+body.theme-dark a {
+    color: var(--cor-link);
+}
+
+body.theme-dark a:hover {
+    color: #55c0a0; /* Cor de hover suave */
+}
+
+/* Navbar */
+body.theme-dark .navbar {
+    background-color: var(--cor-footer);
+}
+
+body.theme-dark .navbar a {
+    color: var(--cor-footer-texto);
+}
+
+/* Footer */
+body.theme-dark footer {
+    background-color: var(--cor-footer);
+    color: var(--cor-footer-texto);
+    padding: 20px 0;
+}
+
+/* Estilo dos produtos no tema escuro */
 body.theme-dark .produto {
-    background-color: #333; /* Cor de fundo do produto no tema escuro */
-    border-color: #444; /* Cor da borda no tema escuro */
+    background-color: #222; /* Fundo escuro para os produtos */
+    border-color: #333; /* Borda mais escura */
+}
+
+body.theme-dark .produto:hover {
+    transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra mais forte no hover */
+}
+
+body.theme-dark .produto img {
+    width: 100%;
+    height: auto;
 }
 
 body.theme-dark .produto .btn {
-    background-color: #444; /* Cor do botão no tema escuro */
-    color: #fff; /* Texto do botão no tema escuro */
+    background-color: #444;
+    color: #fff;
+}
+
+body.theme-dark .btn:hover {
+    background-color: #55c0a0; /* Cor de hover mais clara */
 }
 
 /* Ajuste o botão de alternância na navbar */

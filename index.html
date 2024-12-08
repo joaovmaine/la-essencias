@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LA Essências | Perfumaria e Essências</title>
+    <title>Página Inicial | LA Essências</title>
     <meta name="author" content="João Victor Maine">
     <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="icon" href="assets/images/favicon.png" type="image/png">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css">
-
-
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
         /* Cores */
         :root {
@@ -22,25 +21,31 @@
             --cor-footer: #000;
             --cor-footer-texto: #ffffff;
             --cor-link: #e0e0e0;
+            --cor-destaque: #333;
         }
 
         /* Estilos gerais */
         body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
+            font-family: 'Lora', serif;
+            line-height: 1.7;
             background-color: var(--cor-fundo);
             color: var(--cor-primaria);
+            margin: 0;
+            padding: 0;
         }
 
         h1, h2, h3 {
             color: var(--cor-primaria);
             margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
         }
 
         p {
             color: var(--cor-terciaria);
             font-size: 1.1em;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            line-height: 1.6;
         }
 
         a {
@@ -55,10 +60,33 @@
         /* Navbar */
         .navbar {
             background-color: var(--cor-footer);
+            font-family: 'Lora', serif;
         }
 
         .navbar a {
             color: var(--cor-footer-texto);
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: var(--cor-destaque);
+        }
+
+        /* Botões estilizados */
+        .btn {
+            background-color: transparent;
+            color: var(--cor-primaria);
+            border: 2px solid var(--cor-primaria);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 1em;
+            font-weight: normal;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--cor-primaria);
+            color: #fff;
         }
 
         /* Footer */
@@ -66,101 +94,33 @@
             background-color: var(--cor-footer);
             color: var(--cor-footer-texto);
             padding: 20px 0;
+            text-align: center;
+            font-family: 'Lora', serif;
         }
 
-        /* Sobre */
+        /* Seções */
         .sobre {
-            padding: 50px 0;
+            padding: 0px;
             margin-top: 100px;
         }
 
         .sobre .container {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
+            padding: 0 20px;
         }
 
         .sobre h1 {
             text-align: center;
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
         }
 
         .sobre p {
             text-align: center;
-            font-size: 18px;
-        }
-
-        /* Estilos para Missão, Visão e Valores */
-        .mvv-section {
-            background-color: var(--cor-fundo);
-            padding: 50px 0;
-        }
-
-        .mvv-container {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            padding: 0 15px;
-        }
-
-        .mvv-title {
-            font-size: 2em;
-            margin-bottom: 30px;
-            color: var(--cor-primaria);
-        }
-
-        .mvv-div {
-            margin-bottom: 30px;
-        }
-
-        .mvv-div h2 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-            color: var(--cor-secundaria);
-        }
-
-        /* Estilo dos produtos */
-        .produto {
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-
-        .produto img {
-            width: 100%;
-            height: auto;
-        }
-
-        .info {
-            padding: 15px;
-            text-align: center;
-        }
-
-        .nome {
-            font-weight: bold;
-            font-size: 1.2em;
-            color: var(--cor-primaria);
-        }
-
-        .descricao {
-            font-size: 0.9em;
-            color: var(--cor-terciaria);
-        }
-
-        .preco {
             font-size: 1.1em;
-            color: var(--cor-primaria);
-            margin: 10px 0;
-        }
-
-        .btn {
-            background-color: var(--cor-primaria);
-            color: var(--cor-footer-texto);
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-        }
-
-        .btn:hover {
-            background-color: var(--cor-secundaria);
+            line-height: 1.6;
         }
 
         /* Media Queries */
@@ -168,47 +128,35 @@
             .sobre .container {
                 padding: 0 15px;
             }
+
+            .sobre h1 {
+                font-size: 2.3em;
+            }
         }
     </style>
 </head>
 
-<body class="theme-dark"></body>>
-<!-- Navbar -->
-<nav class="navbar navbar-dark fixed-top" style="background-color: black;">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">LA Essências</a>
-        
-        <!-- Ícone de alternância de tema -->
-        <button id="theme-toggle" class="btn btn-outline-light">
-            <i class="bi bi-moon-fill" id="theme-icon"></i> <!-- Ícone da Lua (tema escuro) -->
-        </button>
+<body>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container-fluid">
+        <button id="theme-toggle" class="btn btn-outline-light ms-3" style="border-radius: 50%; padding: 0.5rem 0.6rem;">
+            <i class="bi bi-moon-fill" id="theme-icon"></i>
+        </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
-    </div>
-    
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarNav" aria-labelledby="navbarNavLabel" style="background-color: black; color: white;">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="navbarNavLabel" style="color: var(--cor-texto-footer);">Menu</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-
-        <div class="offcanvas-body">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" href="index.html" style="color: var(--cor-texto-navbar);">Página Inicial</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="catalogo-masculino.html" style="color: var(--cor-texto-navbar);">Catálogo Masculino</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="catalogo-feminino.html" style="color: var(--cor-texto-navbar);">Catálogo Feminino</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://wa.me/5534991407200" style="color: var(--cor-texto-navbar);">Nosso WhatsApp</a>
-                </li>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link text-light fw-semibold" href="index.html">Início</a></li>
+                <li class="nav-item"><a class="nav-link text-light fw-semibold" href="catalogo.html">Catálogo</a></li>
+                <li class="nav-item"><a class="nav-link text-light fw-semibold" href="https://wa.me/5534991407200">Contato</a></li>
             </ul>
+            <form class="d-flex ms-3" action="catalogo.html" method="get" role="search">
+                <input class="form-control me-2" type="search" name="q" placeholder="Buscar perfumes..." aria-label="Buscar" style="border-radius: 20px;">
+                <button class="btn btn-light rounded-pill px-4" type="submit">Buscar</button>
+            </form>
         </div>
     </div>
 </nav>
@@ -222,75 +170,35 @@
                 <p>
                     Nossa missão é trazer para você perfumes que não apenas complementem seu estilo, mas também criem memórias. Com anos de experiência e uma paixão pelo que fazemos, estamos sempre em busca das melhores essências para nossos clientes.
                 </p>
-                <!-- <img src="assets/images/banner.png" class="img-fluid rounded mb-4" alt="Sobre nós" style="width: 100%; max-width: 800px;"> -->
+                <img src="assets/images/logo2.png" class="img-fluid rounded mb-4" alt="Sobre nós" style="width: 100%; max-width: 200px;">
             </div>
         </div>
     </div>
 </section>
 
- <!-- Mais Vendidos -->
-<section id="mais-vendidos" class="container my-5">
+  <!-- Mais Vendidos -->
+<section id="mais-vendidos" class="container">
     <h2 class="text-center mb-4">Mais Vendidos</h2>
     <div class="row">
         <div class="col-12 col-md-4 mb-4">
             <div class="produto">
-                <img src="assets/images/conjunto1.png" alt="Conjunto 1">
-                <div class="info">
-                    <div class="nome">Conjunto 1</div>
-                    <div class="descricao">Descrição do Perfume 1.</div>
-                    <div class="preco">R$ 119,90</div>
-                    <a href="finalizacao.html" class="btn btn-primary">Saiba Mais</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-md-4 mb-4">
-            <div class="produto">
-                <img src="assets/images/conjunto2.png" alt="Conjunto 2">
-                <div class="info">
-                    <div class="nome">Conjunto 2</div>
-                    <div class="descricao">Descrição do Perfume 2.</div>
-                    <div class="preco">R$ 119,90</div>
-                    <a href="finalizacao.html" class="btn btn-primary">Saiba Mais</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-md-4 mb-4">
-            <div class="produto">
-                <img src="assets/images/difusor1.png" alt="Conjunto 3">
-                <div class="info">
-                    <div class="nome">Difusor</div>
-                    <div class="descricao">Difusor para o seu ambiente.</div>
-                    <div class="preco">R$ 119,90</div>
-                    <a href="finalizacao.html" class="btn btn-primary">Saiba Mais</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-  <!-- Novidades Masculinas -->
-<section id="produtos-masculinos" class="container">
-    <h2 class="text-center mb-4">Novidades Masculinas</h2>
-    <div class="row">
-        <div class="col-12 col-md-4 mb-4">
-            <div class="produto">
-                <img src="assets/images/escuro.png" alt="Perfume 1">
+                <img src="assets/images/claro.png" alt="Perfume 1">
                 <div class="info">
                     <div class="nome">Golden Petals</div>
                     <div class="descricao">Floral luminoso com notas quentes de âmbar</div>
                     <div class="preco">R$ 149,90</div>
-                    <a href="finalizacao.html" class="btn btn-primary">Saiba Mais</a>
+                    <a href="finalizar-compra.html" class="btn btn-primary">Comprar</a>
                 </div>
             </div>
         </div>
         <div class="col-12 col-md-4 mb-4">
             <div class="produto">
-                <img src="assets/images/escuro.png" alt="Perfume 2">
+                <img src="assets/images/médio.png" alt="Perfume 2">
                 <div class="info">
                     <div class="nome">Eternal Dream</div>
                     <div class="descricao">Um perfume etéreo e suave que perdura na pele</div>
                     <div class="preco">R$ 149,90</div>
-                    <a href="finalizacao.html" class="btn">Saiba Mais</a>
+                    <a href="finalizar-compra.html" class="btn">Comprar</a>
                 </div>
             </div>
         </div>
@@ -301,47 +209,47 @@
                     <div class="nome">Rosewood Whisper</div>
                     <div class="descricao">Amadeirado com uma pitada de rosas suaves.</div>
                     <div class="preco">R$ 149,90</div>
-                    <a href="finalizacao.html" class="btn">Saiba Mais</a>
+                    <a href="finalizar-compra.html" class="btn">Comprar</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Novidades Femininas -->
-<section id="produtos" class="container">
-    <h2 class="text-center mb-4">Novidades Femininas</h2>
+<!-- Conjuntos -->
+<section id="mais-vendidos" class="container my-5">
+    <h2 class="text-center mb-4">Conjuntos</h2>
     <div class="row">
         <div class="col-12 col-md-4 mb-4">
             <div class="produto">
-                <img src="assets/images/claro.png" alt="Perfume 1" class="img-fluid">
+                <img src="assets/images/conjunto1.png" alt="Conjunto 1">
                 <div class="info">
-                    <div class="nome">Midnight Blossom</div>
-                    <div class="descricao">Um floral noturno, misterioso e cativante.</div>
+                    <div class="nome">Conjunto 1</div>
+                    <div class="descricao">Descrição do Perfume 1.</div>
                     <div class="preco">R$ 149,90</div>
-                    <a href="finalizacao.html" class="btn btn-primary">Saiba Mais</a>
+                    <a href="finalizar-compra.html" class="btn btn-primary">Comprar</a>
                 </div>
             </div>
         </div>
         <div class="col-12 col-md-4 mb-4">
             <div class="produto">
-                <img src="assets/images/claro.png" alt="Perfume 2" class="img-fluid">
+                <img src="assets/images/conjunto2.png" alt="Conjunto 2">
                 <div class="info">
-                    <div class="nome">Velvet Sky</div>
-                    <div class="descricao">Suave e envolvente, como uma noite tranquila.</div>
+                    <div class="nome">Conjunto 2</div>
+                    <div class="descricao">Descrição do Perfume 2.</div>
                     <div class="preco">R$ 149,90</div>
-                    <a href="finalizacao.html" class="btn btn-primary">Saiba Mais</a>
+                    <a href="finalizar-compra.html" class="btn btn-primary">Comprar</a>
                 </div>
             </div>
         </div>
         <div class="col-12 col-md-4 mb-4">
             <div class="produto">
-                <img src="assets/images/claro.png" alt="Perfume 3" class="img-fluid">
+                <img src="assets/images/difusor1.png" alt="Conjunto 3">
                 <div class="info">
-                    <div class="nome">Mystic Reverie</div>
-                    <div class="descricao">A essência do sonho com toques orientais</div>
-                    <div class="preco">R$ 149,90</div>
-                    <a href="finalizacao.html" class="btn btn-primary">Saiba Mais</a>
+                    <div class="nome">Difusor 1</div>
+                    <div class="descricao">Difusor para o seu ambiente.</div>
+                    <div class="preco">R$ 119,90</div>
+                    <a href="finalizar-compra.html" class="btn btn-primary">Comprar</a>
                 </div>
             </div>
         </div>
@@ -375,56 +283,75 @@
     </div>
 </section>
 
-    <!-- Footer -->
-    <footer class="bg-black text-light pt-4">
-        <div class="container">
-            <div class="row text-center text-md-start">
-                <!-- Seção LA Essências -->
-                <div class="col-md-3 mb-4">
-                    <h5 class="text-uppercase">LA Essências</h5>
-                    <p>Perfumes e essências de qualidade que definem seu estilo.</p>
-                </div>
-
-                <!-- Seção Navegação -->
-                <div class="col-md-3 mb-4">
-                    <h5 class="text-uppercase">Navegação</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="index.html" class="text-light text-decoration-none">Página Inicial</a></li>
-                        <li><a href="catalogo-masculino.html" class="text-light text-decoration-none">Catálogo Masculino</a></li>
-                        <li><a href="catalogo-feminino.html" class="text-light text-decoration-none">Catálogo Feminino</a></li>
-                    </ul>
-                </div>
-
-                <!-- Seção Contato -->
-                <div class="col-md-3 mb-4">
-                    <h5 class="text-uppercase">Contato</h5>
-                    <ul class="list-unstyled">
-                        <li><i class="fas fa-phone-alt"></i> (34) 99140-7200</li>
-                        <li><i class="fas fa-envelope"></i> contatolaessencias@gmail.com</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Itapagipe/MG</li>
-                    </ul>
-                </div>
-
-                <!-- Seção Redes Sociais -->
-                <div class="col-md-3 mb-4">
-                    <h5 class="text-uppercase">Siga-nos</h5>
-                    <div class="social-icons">
-                        <a href="https://www.instagram.com/la.officialperfumes/" class="text-light text-decoration-none">Instagram</a>
-                    </div>
-                </div>
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row text-center text-md-start">
+            <div class="col-md-3 mb-4">
+                <h5 class="text-uppercase font-weight-bold">LA Essências</h5>
+                <p>Perfumes e essências de qualidade que definem seu estilo.</p>
             </div>
 
-            <!-- Linha divisória -->
-            <hr class="bg-light">
+            <div class="col-md-3 mb-4">
+                <h5 class="text-uppercase font-weight-bold">Navegação</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html" class="text-light text-decoration-none hover-underline-animation">Página Inicial</a></li>
+                    <li><a href="catalogo.html" class="text-light text-decoration-none hover-underline-animation">Catálogo</a></li>
+                    <li><a href="https://api.whatsapp.com/send/?phone=5534991407200&text&type=phone_number&app_absent=0" class="text-light text-decoration-none hover-underline-animation">WhatsApp</a></li>
+                </ul>
+            </div>
 
-            <!-- Créditos finais -->
-            <div class="row">
-                <div class="col text-center">
-                    <p class="mb-0">© 2024 LA Essências. Todos os direitos reservados.</p>
+            <div class="col-md-3 mb-4">
+                <h5 class="text-uppercase font-weight-bold">Contato</h5>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-phone-alt"></i> (34) 99140-7200</li>
+                    <li><i class="fas fa-envelope"></i> leandra.andre.essencias@gmail.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Itapagipe/MG</li>
+                </ul>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <h5 class="text-uppercase font-weight-bold">Siga-nos</h5>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/laessencias.oficial/" class="text-light text-decoration-none hover-underline-animation">Instagram</a>
                 </div>
             </div>
         </div>
-    </footer>
+
+        <hr class="bg-light">
+
+        <div class="row">
+            <div class="col text-center">
+                <p class="mb-0">© 2024 LA Essências. Todos os direitos reservados.</p>
+                <p><a href="politica-privacidade.html" class="text-light text-decoration-none hover-underline-animation">Política de Privacidade</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- CSS para hover e animação -->
+<style>
+    .hover-underline-animation {
+        position: relative;
+        display: inline-block;
+    }
+    .hover-underline-animation:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease-out;
+    }
+    .hover-underline-animation:hover:before {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+</style>
 
 <!-- Theme -->
     <script>
@@ -454,5 +381,19 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const query = params.get('q');
+
+        if (query) {
+            const produtos = document.querySelectorAll('.produto');
+            produtos.forEach(produto => {
+                const nome = produto.querySelector('.nome').textContent.toLowerCase();
+                if (!nome.includes(query.toLowerCase())) {
+                    produto.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
