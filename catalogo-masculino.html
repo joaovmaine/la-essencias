@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Masculino | LA Essências</title>
+    <meta name="author" content="João Victor Maine">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="icon" href="assets/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Cores */
+        :root {
+            --cor-primaria: #333;
+            --cor-secundaria: #555;
+            --cor-terciaria: #777;
+            --cor-fundo: #f9f9f9;
+            --cor-footer: #000;
+            --cor-footer-texto: #ffffff;
+            --cor-link: #e0e0e0;
+            --cor-destaque: #333;
+        }
+
+        /* Estilos gerais */
+        body {
+            font-family: 'Lora', serif;
+            line-height: 1.7;
+            background-color: var(--cor-fundo);
+            color: var(--cor-primaria);
+            margin-top: 0px;
+            padding-bottom: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1, h2, h3 {
+            color: var(--cor-primaria);
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        h1:hover, h2:hover, h3:hover {
+            color: var(--cor-destaque);
+        }
+
+        p {
+            color: var(--cor-terciaria);
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--cor-link);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--cor-footer);
+            font-family: 'Lora', serif;
+        }
+
+        .navbar a {
+            color: var(--cor-footer-texto);
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: var(--cor-destaque);
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .social-icons i {
+            font-size: 1.2em;
+            color: var(--cor-footer-texto);
+        }
+
+        .social-icons a:hover i {
+            color: var(--cor-link);
+        }
+
+        .navbar hr {
+            border-color: var(--cor-footer-texto);
+        }
+
+        .produto {
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+            background-color: white;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .produto:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .produto img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .nome {
+            font-weight: 700;
+            font-size: 1.4em;
+            color: var(--cor-primaria);
+        }
+
+        .descricao {
+            font-size: 1em;
+            color: var(--cor-terciaria);
+            margin: 10px 0;
+        }
+
+        .preco {
+            font-size: 1.3em;
+            color: var(--cor-primaria);
+            margin: 15px 0;
+        }
+
+        /* Botões estilizados */
+        .btn {
+            background-color: transparent;
+            color: var(--cor-primaria);
+            border: 2px solid var(--cor-primaria);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 1em;
+            font-weight: normal;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--cor-primaria);
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .sobre .container {
+                padding: 0 15px;
+            }
+
+            .sobre h1 {
+                font-size: 2.3em;
+            }
+
+            .mvv-title {
+                font-size: 2.2em;
+            }
+
+            .produto {
+                margin-bottom: 25px;
+            }
+        }
+    </style>
+</head>
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container-fluid">
+        <button id="theme-toggle" class="btn btn-outline-light ms-3" style="border-radius: 50%; padding: 0.5rem 0.6rem;">
+            <i class="bi bi-moon-fill" id="theme-icon"></i>
+        </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link text-light fw-semibold" href="index.html">Página Inicial</a></li>
+                <li class="nav-item"><a class="nav-link text-light fw-semibold" href="catalogo-feminino.html" data-catalogo="feminino">Catálogo Feminino</a></li>
+                <li class="nav-item"><a class="nav-link text-light fw-semibold" href="catalogo-masculino.html" data-catalogo="masculino">Catálogo Masculino</a></li>
+                <li class="nav-item"><a class="nav-link text-light fw-semibold" href="https://wa.me/5534991407200">WhatsApp</a></li>
+                <li class="nav-item"><a class="nav-link text-light fw-semibold" href="https://www.instagram.com/laessencias.oficial/">Instagram</a></li>
+            </ul>
+            <form class="d-flex ms-3" action="catalogo-masculino.html" method="get" role="search" id="searchForm">
+                <input class="form-control me-2" type="search" name="q" placeholder="Buscar perfumes..." aria-label="Buscar" style="border-radius: 20px;">
+                <button class="btn btn-light rounded-pill px-4" type="submit">Buscar</button>
+                <!-- Campo oculto para o catálogo selecionado -->
+                <input type="hidden" id="catalogo" name="catalogo" value="feminino">
+            </form>
+        </div>
+    </div>
+</nav>
+
+<script>
+    // Script para alterar a busca entre os catálogos feminino e masculino
+    document.addEventListener('DOMContentLoaded', function () {
+        const catalogoLinks = document.querySelectorAll('a[data-catalogo]');
+        const searchForm = document.getElementById('searchForm');
+        const catalogoInput = document.getElementById('catalogo');
+
+        catalogoLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                // Definir o valor do catálogo com base na seleção
+                const catalogo = this.getAttribute('data-catalogo');
+                catalogoInput.value = catalogo;
+
+                // Alterar a ação do formulário com base no catálogo selecionado
+                if (catalogo === 'feminino') {
+                    searchForm.action = 'catalogo-feminino.html';
+                } else if (catalogo === 'masculino') {
+                    searchForm.action = 'catalogo-masculino.html';
+                }
+            });
+        });
+    });
+</script>
+<body>
+
+    <section id="sobre" class="sobre py-5">
+        <div class="container" data-aos="fade-up">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-12 text-center">
+                    <h2 class="mb-4">Catálogo Masculino</h2>
+                    <p style="background-color: #ffebcc; color: #b85c00; font-weight: bold; font-size: 1.2em; padding: 15px; border-radius: 8px; border: 2px solid #b85c00;">
+                        Todos os perfumes são <u>INSPIRAÇÕES</u> de renomadas essências internacionais.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+  <!-- Catálogo -->
+  <section id="produtos-masculinos" class="container">
+    <!-- <h2 class="text-center mb-4">Catálogo</h2> -->
+    <div class="row">
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/claro.png" alt="Perfume 1">
+                <div class="info">
+                    <div class="nome">50 - ONE MILLION</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=ONE%20MILLION&preco=179.90&imagem=assets/images/claro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>        
+
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/médio.png" alt="Perfume 2">
+                <div class="info">
+                    <div class="nome">51 - SAUVAGE</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=SAUVAGE&preco=179.90&imagem=assets/images/médio.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/escuro.png" alt="Perfume 3">
+                <div class="info">
+                    <div class="nome">52 - INVICTUS</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=INVICTUS&preco=179.90&imagem=assets/images/escuro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/claro.png" alt="Perfume 4">
+                <div class="info">
+                    <div class="nome">53 - ARMANI CODE</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=ARMANI%20CODE&preco=179.90&imagem=assets/images/claro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/médio.png" alt="Perfume 5">
+                <div class="info">
+                    <div class="nome">54 - 212 MEN</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=212%20MEN&preco=179.90&imagem=assets/images/médio.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/escuro.png" alt="Perfume 6">
+                <div class="info">
+                    <div class="nome">55 - 212 VIP</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=212%20VIP&preco=179.90&imagem=assets/images/escuro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/claro.png" alt="Perfume 7">
+                <div class="info">
+                    <div class="nome">56 - 212 VIP BLACK</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=212%20VIP%20BLACK&preco=179.90&imagem=assets/images/claro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/médio.png" alt="Perfume 8">
+                <div class="info">
+                    <div class="nome">57 - FERRARI BLACK</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=Ferrari%20Black&preco=179.90&imagem=assets/images/médio.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/escuro.png" alt="Perfume 9">
+                <div class="info">
+                    <div class="nome">58 - SILVER SCENT</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=Silver%20Scent&preco=179.90&imagem=assets/images/escuro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/claro.png" alt="Perfume 10">
+                <div class="info">
+                    <div class="nome">59 - CAROLINA HERRERA MEM</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=Carolina%20Herrera%20MEM&preco=179.90&imagem=assets/images/claro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/médio.png" alt="Perfume 11">
+                <div class="info">
+                    <div class="nome">60 - ALLURE SPORT</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=Allure%20Sport&preco=179.90&imagem=assets/images/médio.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/escuro.png" alt="Perfume 12">
+                <div class="info">
+                    <div class="nome">61 - BLEU DE CHANEL</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=Bleu%20de%20Chanel&preco=179.90&imagem=assets/images/escuro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/claro.png" alt="Perfume 13">
+                <div class="info">
+                    <div class="nome">62 - SCANDAL</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=Scandal&preco=179.90&imagem=assets/images/claro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/médio.png" alt="Perfume 14">
+                <div class="info">
+                    <div class="nome">63 - INVICTUS VICTORY ELIXIR</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=INVICTUS%20VICTORY%20ELIXIR&preco=179.90&imagem=assets/images/médio.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/escuro.png" alt="Perfume 15">
+                <div class="info">
+                    <div class="nome">66 - HUGO</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=HUGO&preco=179.90&imagem=assets/images/escuro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/claro.png" alt="Perfume 16">
+                <div class="info">
+                    <div class="nome">67 - CALVIN KLEIN ONE</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=CALVIN%20KLEIN%20ONE&preco=179.90&imagem=assets/images/claro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/médio.png" alt="Perfume 17">
+                <div class="info">
+                    <div class="nome">69 - 212 SEXY MEN</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=212%20SEXY%20MEN&preco=179.90&imagem=assets/images/médio.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/escuro.png" alt="Perfume 18">
+                <div class="info">
+                    <div class="nome">70 - ACQUA DE GIÓ</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=ACQUA%20DE%20GIÓ&preco=179.90&imagem=assets/images/escuro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/claro.png" alt="Perfume 19">
+                <div class="info">
+                    <div class="nome">71 - JOOP JUMP</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=JOOP%20JUMP&preco=179.90&imagem=assets/images/claro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/médio.png" alt="Perfume 20">
+                <div class="info">
+                    <div class="nome">73 - AZARRO</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=AZARRO&preco=179.90&imagem=assets/images/médio.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/escuro.png" alt="Perfume 21">
+                <div class="info">
+                    <div class="nome">74 - CREED</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=CREED&preco=179.90&imagem=assets/images/escuro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/claro.png" alt="Perfume 22">
+                <div class="info">
+                    <div class="nome">75 - POLO BLUE</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=POLO%20BLUE&preco=179.90&imagem=assets/images/claro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/médio.png" alt="Perfume 23">
+                <div class="info">
+                    <div class="nome">76 - BOSS</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=BOSS&preco=179.90&imagem=assets/images/médio.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/escuro.png" alt="Perfume 24">
+                <div class="info">
+                    <div class="nome">77 - MALBEC</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=MALBEC&preco=179.90&imagem=assets/images/escuro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/claro.png" alt="Perfume 25">
+                <div class="info">
+                    <div class="nome">78 - INVICTUS VICTORY</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=INVICTUS%20VICTORY&preco=179.90&imagem=assets/images/claro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/médio.png" alt="Perfume 26">
+                <div class="info">
+                    <div class="nome">79 - BLACK XS - PACO RABANNE</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=BLACK%20XS%20-%20PACO%20RABANNE&preco=179.90&imagem=assets/images/médio.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/escuro.png" alt="Perfume 27">
+                <div class="info">
+                    <div class="nome">100 - THE MOST WANTED "UNISEX"</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=THE%20MOST%20WANTED%20%22UNISEX%22&preco=179.90&imagem=assets/images/escuro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Logo isolada -->
+            <div class="col-md-3 text-center text-md-start mb-4">
+                <img src="assets/images/logo.png" alt="Logo LA Essências" style="max-width: 180px;">
+            </div>
+
+            <!-- Conteúdo principal -->
+            <div class="col-md-9">
+                <div class="row text-center text-md-start">
+                    <div class="col-md-4 mb-4">
+                        <h5 class="text-uppercase font-weight-bold">LA Essências</h5>
+                        <p>Perfumes e essências de qualidade que definem seu estilo.</p>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <h5 class="text-uppercase font-weight-bold">Navegação</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="index.html" class="text-light text-decoration-none hover-underline-animation">Página Inicial</a></li>
+                            <li><a href="catalogo-feminino.html" class="text-light text-decoration-none hover-underline-animation">Catálogo Feminino</a></li>
+                            <li><a href="catalogo-masculino.html" class="text-light text-decoration-none hover-underline-animation">Catálogo Masculino</a></li>
+                            <li><a href="https://api.whatsapp.com/send/?phone=5534991407200&text&type=phone_number&app_absent=0" class="text-light text-decoration-none hover-underline-animation">WhatsApp</a></li>
+                            <li><a href="https://www.instagram.com/laessencias.oficial/" class="text-light text-decoration-none hover-underline-animation">Instagram</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <h5 class="text-uppercase font-weight-bold">Contato</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-phone-alt"></i> (34) 99140-7200</li>
+                            <li><i class="fas fa-envelope"></i> leandra.andre.essencias@gmail.com</li>
+                            <li><i class="fas fa-map-marker-alt"></i>Avenida 03, N° 5420 - Jardim América<br>Itapagipe - MG, 38240-000</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="bg-light">
+
+        <div class="row">
+            <div class="col text-center">
+                <p class="mb-0">© 2024 LA Essências. Todos os direitos reservados.</p>
+                <p><a href="politica-privacidade.html" class="text-light text-decoration-none hover-underline-animation">Política de Privacidade</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- CSS para hover e animação -->
+<style>
+    .hover-underline-animation {
+        position: relative;
+        display: inline-block;
+    }
+    .hover-underline-animation:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease-out;
+    }
+    .hover-underline-animation:hover:before {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+</style>
+
+<!-- Theme -->
+    <script>
+        const themeToggleButton = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        
+        // Verifica o tema salvo no localStorage
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+            document.body.classList.add('theme-dark');
+            themeIcon.classList.replace('bi-moon-fill', 'bi-sun-fill'); // Altera para ícone de Sol
+        }
+    
+        // Alternar tema ao clicar no botão
+        themeToggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('theme-dark');
+            
+            if (document.body.classList.contains('theme-dark')) {
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.replace('bi-moon-fill', 'bi-sun-fill'); // Ícone Sol
+            } else {
+                localStorage.removeItem('theme');
+                themeIcon.classList.replace('bi-sun-fill', 'bi-moon-fill'); // Ícone Lua
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const query = params.get('q');
+
+        if (query) {
+            const produtos = document.querySelectorAll('.produto');
+            produtos.forEach(produto => {
+                const nome = produto.querySelector('.nome').textContent.toLowerCase();
+                if (!nome.includes(query.toLowerCase())) {
+                    produto.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

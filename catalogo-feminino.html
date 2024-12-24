@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Feminino | LA Essências</title>
+    <meta name="author" content="João Victor Maine">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="icon" href="assets/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Cores */
+        :root {
+            --cor-primaria: #333;
+            --cor-secundaria: #555;
+            --cor-terciaria: #777;
+            --cor-fundo: #f9f9f9;
+            --cor-footer: #000;
+            --cor-footer-texto: #ffffff;
+            --cor-link: #e0e0e0;
+            --cor-destaque: #333;
+        }
+
+        /* Estilos gerais */
+        body {
+            font-family: 'Lora', serif;
+            line-height: 1.7;
+            background-color: var(--cor-fundo);
+            color: var(--cor-primaria);
+            margin-top: 0px;
+            padding-bottom: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1, h2, h3 {
+            color: var(--cor-primaria);
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        h1:hover, h2:hover, h3:hover {
+            color: var(--cor-destaque);
+        }
+
+        p {
+            color: var(--cor-terciaria);
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--cor-link);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--cor-footer);
+            font-family: 'Lora', serif;
+        }
+
+        .navbar a {
+            color: var(--cor-footer-texto);
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: var(--cor-destaque);
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .social-icons i {
+            font-size: 1.2em;
+            color: var(--cor-footer-texto);
+        }
+
+        .social-icons a:hover i {
+            color: var(--cor-link);
+        }
+
+        .navbar hr {
+            border-color: var(--cor-footer-texto);
+        }
+
+        .produto {
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+            background-color: white;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .produto:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .produto img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .nome {
+            font-weight: 700;
+            font-size: 1.4em;
+            color: var(--cor-primaria);
+        }
+
+        .descricao {
+            font-size: 1em;
+            color: var(--cor-terciaria);
+            margin: 10px 0;
+        }
+
+        .preco {
+            font-size: 1.3em;
+            color: var(--cor-primaria);
+            margin: 15px 0;
+        }
+
+        /* Botões estilizados */
+        .btn {
+            background-color: transparent;
+            color: var(--cor-primaria);
+            border: 2px solid var(--cor-primaria);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 1em;
+            font-weight: normal;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--cor-primaria);
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .sobre .container {
+                padding: 0 15px;
+            }
+
+            .sobre h1 {
+                font-size: 2.3em;
+            }
+
+            .mvv-title {
+                font-size: 2.2em;
+            }
+
+            .produto {
+                margin-bottom: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section id="sobre" class="sobre py-5">
+        <div class="container" data-aos="fade-up">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-12 text-center">
+                    <h2 class="mb-4">Catálogo Feminino</h2>
+                    <p style="background-color: #ffebcc; color: #b85c00; font-weight: bold; font-size: 1.2em; padding: 15px; border-radius: 8px; border: 2px solid #b85c00;">
+                        Todos os perfumes são <u>INSPIRAÇÕES</u> de renomadas essências internacionais.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container-fluid">
+        <button id="theme-toggle" class="btn btn-outline-light ms-3" style="border-radius: 50%; padding: 0.5rem 0.6rem;">
+            <i class="bi bi-moon-fill" id="theme-icon"></i>
+        </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link text-light fw-semibold" href="index.html">Página Inicial</a></li>
+                <li class="nav-item"><a class="nav-link text-light fw-semibold" href="catalogo-feminino.html" data-catalogo="feminino">Catálogo Feminino</a></li>
+                <li class="nav-item"><a class="nav-link text-light fw-semibold" href="catalogo-masculino.html" data-catalogo="masculino">Catálogo Masculino</a></li>
+                <li class="nav-item"><a class="nav-link text-light fw-semibold" href="https://wa.me/5534991407200">WhatsApp</a></li>
+                <li class="nav-item"><a class="nav-link text-light fw-semibold" href="https://www.instagram.com/laessencias.oficial/">Instagram</a></li>
+            </ul>
+            <form class="d-flex ms-3" action="catalogo-feminino.html" method="get" role="search" id="searchForm">
+                <input class="form-control me-2" type="search" name="q" placeholder="Buscar perfumes..." aria-label="Buscar" style="border-radius: 20px;">
+                <button class="btn btn-light rounded-pill px-4" type="submit">Buscar</button>
+                <!-- Campo oculto para o catálogo selecionado -->
+                <input type="hidden" id="catalogo" name="catalogo" value="feminino">
+            </form>
+        </div>
+    </div>
+</nav>
+
+<script>
+    // Script para alterar a busca entre os catálogos feminino e masculino
+    document.addEventListener('DOMContentLoaded', function () {
+        const catalogoLinks = document.querySelectorAll('a[data-catalogo]');
+        const searchForm = document.getElementById('searchForm');
+        const catalogoInput = document.getElementById('catalogo');
+
+        catalogoLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                // Definir o valor do catálogo com base na seleção
+                const catalogo = this.getAttribute('data-catalogo');
+                catalogoInput.value = catalogo;
+
+                // Alterar a ação do formulário com base no catálogo selecionado
+                if (catalogo === 'feminino') {
+                    searchForm.action = 'catalogo-feminino.html';
+                } else if (catalogo === 'masculino') {
+                    searchForm.action = 'catalogo-masculino.html';
+                }
+            });
+        });
+    });
+</script>
+
+
+  <!-- Catálogo -->
+  <section id="produtos-masculinos" class="container">
+    <!-- <h2 class="text-center mb-4">Catálogo</h2> -->
+    <div class="row">
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/claro.png" alt="Perfume OLYMPEA">
+                <div class="info">
+                    <div class="nome" id="produto-nome">1 - OLYMPEA</div>
+                    <div class="descricao">Olympea é um perfume oriental floral marcado pela harmonia deliciosa e cativante da baunilha e do sal sobre a pele. O impulso da tangerina verde, a água de jasmim e a flor de gengibre picante são envolvidas por notas amadeiradas de caxemira e âmbar, que trazem um toque quente e profundamente sensual à alquimia.</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=OLYMPEA&descricao=Olympea%20%C3%A9%20um%20perfume%20oriental%20floral%20marcado%20pela%20harmonia%20deliciosa%20e%20cativante%20da%20baunilha%20e%20do%20sal%20sobre%20a%20pele.%20O%20impulso%20da%20tangerina%20verde%2C%20a%20%C3%A1gua%20de%20jasmim%20e%20a%20flor%20de%20gengibre%20picante%20s%C3%A3o%20envolvidas%20por%20notas%20amadeiradas%20de%20caxemira%20e%20%C3%A2mbar%2C%20que%20trazem%20um%20toque%20quente%20e%20profundamente%20sensual%20%C3%A0%20alquimia.&preco=179.90&imagem=assets/images/claro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div> 
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/médio.png" alt="Perfume SCANDAL">
+                <div class="info">
+                    <div class="nome">2 - SCANDAL</div>
+                    <div class="descricao">Scandal é descrito como uma overdose de prazer, com notas de mel, que se une à elegância da gardênia e à sensualidade do patchouli. Suas notas de topo são: Laranja Sanguínea e Mandarina. As notas de coração são: Mel, Gardênia, Flor de Laranjeira, Jasmim e Pêssego. As notas de fundo são: Cera de Abelha, Caramelo, Patchouli e Alcaçuz.</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=SCANDAL&descricao=Scandal%20%C3%A9%20descrito%20como%20uma%20overdose%20de%20prazer%2C%20com%20notas%20de%20mel%2C%20que%20se%20une%20%C3%A0%20eleg%C3%A2ncia%20da%20gard%C3%AAnia%20e%20%C3%A0%20sensualidade%20do%20patchouli.%20Suas%20notas%20de%20topo%20s%C3%A3o%3A%20Laranja%20Sangu%C3%ADnea%20e%20Mandarina.%20As%20notas%20de%20cora%C3%A7%C3%A3o%20s%C3%A3o%3A%20Mel%2C%20Gard%C3%AAnia%2C%20Flor%20de%20Laranjeira%2C%20Jasmim%20e%20P%C3%AAssego.%20As%20notas%20de%20fundo%20s%C3%A3o%3A%20Cera%20de%20Abelha%2C%20Caramelo%2C%20Patchouli%20e%20Alca%C3%A7uz.&preco=179.90&imagem=assets/images/médio.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/escuro.png" alt="Perfume 3">
+                <div class="info">
+                    <div class="nome">3 - GOOD GIRL</div>
+                    <div class="descricao">O aroma de Good Girl é ao mesmo tempo um perfume intenso, refrescante e cativante. As doces qualidades do jasmim trazem uma leve feminilidade à fragrância, enquanto o cacau ricamente perfumado e a Tonka predominante expressam o lado misterioso de Good Girl. Notas de amêndoa e café evocam o espírito de vibração ousada.</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=GOOD%20GIRL&descricao=O%20aroma%20de%20Good%20Girl%20%C3%A9%20ao%20mesmo%20tempo%20um%20perfume%20intenso%2C%20refrescante%20e%20cativante.%20As%20doces%20qualidades%20do%20jasmim%20trazem%20uma%20leve%20feminilidade%20%C3%A0%20fragr%C3%A2ncia%2C%20enquanto%20o%20cacau%20ricamente%20perfumado%20e%20a%20Tonka%20predominante%20expressam%20o%20lado%20misterioso%20de%20Good%20Girl.%20Notas%20de%20am%C3%AAm%20e%20caf%C3%A9%20evocam%20o%20esp%C3%ADrito%20de%20vibra%C3%A7%C3%A3o%20ousada.&preco=179.90&imagem=assets/images/escuro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>        
+
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/claro.png" alt="Perfume 4">
+                <div class="info">
+                    <div class="nome">4 - MARINA DE BOURBON</div>
+                    <div class="descricao">Marina De Bourbon - Rouge Royal feminino com notas de cassis, morango e limão verde, ylang, jasmim e muguet selvagem, musgo de árvore e oppoponax, foi criado pela princesa Marina de Bourbon.</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=MARINA%20DE%20BOURBON&descricao=Marina%20De%20Bourbon%20-%20Rouge%20Royal%20feminino%20com%20notas%20de%20cassis%2C%20morango%20e%20lim%C3%A3o%20verde%2C%20ylang%2C%20jasmim%20e%20muguet%20selvagem%2C%20musgo%20de%20%C3%A1rvore%20e%20oppoponax%2C%20foi%20criado%20pela%20princesa%20Marina%20de%20Bourbon.&preco=179.90&imagem=assets/images/claro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/médio.png" alt="Perfume 5">
+                <div class="info">
+                    <div class="nome">5 - LÁ VIE ESTE BELLE</div>
+                    <div class="descricao">A fragrância do perfume La Vie Est Belle é floral e frutada. Alegre e feminino, o suco estrela o primeiro acorde da Flor de Íris, presente em todas as fragrâncias da família, e combina com a elegância da Patchouli e a Baunilha.</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=L%C3%81%20VIE%20ESTE%20BELLE&descricao=A%20fragr%C3%A2ncia%20do%20perfume%20La%20Vie%20Est%20Belle%20%C3%A9%20floral%20e%20frutada.%20Alegre%20e%20feminino%2C%20o%20suco%20estrela%20o%20primeiro%20acorde%20da%20Flor%20de%20%C3%8Aris%2C%20presente%20em%20todas%20as%20fragr%C3%A2ncias%20da%20fam%C3%ADlia%2C%20e%20combina%20com%20a%20eleg%C3%A2ncia%20da%20Patchouli%20e%20a%20Baunilha.&preco=179.90&imagem=assets/images/médio.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/escuro.png" alt="Perfume 6">
+                <div class="info">
+                    <div class="nome">6 - FANTASY</div>
+                    <div class="descricao">O Fantasy é um perfume feminino que tem um cheiro doce, frutado e floral, com uma base quente e marcante que o torna a escolha perfeita para momentos especiais. Não à toa, se tornou o favorito entre as mulheres que querem se sentir confiantes e expressar seu lado feminina com muita atitude.</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=FANTASY&descricao=O%20Fantasy%20%C3%A9%20um%20perfume%20feminino%20que%20tem%20um%20cheiro%20doce%2C%20frutado%20e%20floral%2C%20com%20uma%20base%20quente%20e%20marcante%20que%20o%20torna%20a%20escolha%20perfeita%20para%20momentos%20especiais.%20N%C3%A3o%20%C3%A0%20toa%2C%20se%20tornou%20o%20favorito%20entre%20as%20mulheres%20que%20querem%20se%20sentir%20confiantes%20e%20expressar%20seu%20lado%20feminina%20com%20muita%20atitude.&preco=179.90&imagem=assets/images/escuro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/claro.png" alt="Perfume 7">
+                <div class="info">
+                    <div class="nome">7 - 212 VIP ROSÉ</div>
+                    <div class="descricao">As bolhas cor de rosa efervescentes do champanhe rosé anunciam uma atmosfera de celebração e alegria, enquanto sua fragrância refrescante e frutada adiciona um toque de sofisticação e elegância à composição. No coração do 212 VIP Rosé reside a suave e delicada flor de pêssego.</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=212%20VIP%20ROS%C3%89&descricao=As%20bolhas%20cor%20de%20rosa%20efervescentes%20do%20champanhe%20ros%C3%A9%20anunciam%20uma%20atmosfera%20de%20celebra%C3%A7%C3%A3o%20e%20alegria%2C%20enquanto%20sua%20fragr%C3%A2ncia%20refrescante%20e%20frutada%20adiciona%20um%20toque%20de%20sofistica%C3%A7%C3%A3o%20e%20eleg%C3%A2ncia%20%C3%A0%20composi%C3%A7%C3%A3o.%20No%20cora%C3%A7%C3%A3o%20do%20212%20VIP%20Ros%C3%A9%20reside%20a%20suave%20e%20delicada%20flor%20de%20p%C3%AAssego.&preco=179.90&imagem=assets/images/claro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/médio.png" alt="Perfume 8">
+                <div class="info">
+                    <div class="nome">8 - LIGHT BLUE</div>
+                    <div class="descricao">Aroma floral e frutal, que combina cedro siciliano com folhas de maçã verde, capturando a essência de um verão ensolarado na Sicília. O frescor do bambu, a intensidade do jasmim e o encanto da rosa branca, fundem-se às madeiras cítricas, ao âmbar e à delicada carícia do almíscar.</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=LIGHT%20BLUE&descricao=Aroma%20floral%20e%20frutal%2C%20que%20combina%20cedro%20siciliano%20com%20folhas%20de%20ma%C3%A7%C3%A3%20verde%2C%20capturando%20a%20ess%C3%AAncia%20de%20um%20ver%C3%A3o%20ensolarado%20na%20Sic%C3%ADlia.%20O%20frescor%20do%20bambu%2C%20a%20intensidade%20do%20jasmim%20e%20o%20encanto%20da%20rosa%20branca%2C%20fundem-se%20%C3%A0s%20madeiras%20c%C3%ADtricas%2C%20ao%20%C3%A2mbar%20e%20%C3%A0%20delicada%20car%C3%ADcia%20do%20alm%C3%ADscar.&preco=179.90&imagem=assets/images/médio.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>        
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/escuro.png" alt="Perfume 9">
+                <div class="info">
+                    <div class="nome">9 - COCO MADEMOISELLE</div>
+                    <div class="descricao">A fragrância é estruturada em torno de uma overdose de patchouli, aquecida por um acorde ambarado de absoluto de Baunilha e Fava Tonka. Um coração de rosa e jasmim e o frescor contrastante das frutas cítricas adicionam suas notas para compor esta trilha poderosa.</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=COCO%20MADEMOISELLE&descricao=A%20fragr%C3%A2ncia%20%C3%A9%20estruturada%20em%20torno%20de%20uma%20overdose%20de%20patchouli%2C%20aquecida%20por%20um%20acorde%20ambarado%20de%20absoluto%20de%20Baunilha%20e%20Fava%20Tonka.%20Um%20cora%C3%A7%C3%A3o%20de%20rosa%20e%20jasmim%20e%20o%20frescor%20contrastante%20das%20frutas%20c%C3%ADtricas%20adicionam%20suas%20notas%20para%20compor%20esta%20trilha%20poderosa.&preco=179.90&imagem=assets/images/escuro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>          
+
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/claro.png" alt="Perfume 10">
+                <div class="info">
+                    <div class="nome">10 - CACHARREL AMOR AMOR</div>
+                    <div class="descricao">Amor Amor de Cacharel é um perfume Floral Frutado Feminino. As notas de topo são: Groselha Preta, Laranja, Mandarina, Toranja, Cássia e Bergamota. As notas de coração são: Rosa, Damasco, Jasmim, Lírio e Lírio-do-Vale. As notas de fundo são: Baunilha, Fava Tonka, Almíscar, Âmbar e Cedro da Virgínia.</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=CACHARREL%20AMOR%20AMOR&descricao=Amor%20Amor%20de%20Cacharel%20%C3%A9%20um%20perfume%20Floral%20Frutado%20Feminino.%20As%20notas%20de%20topo%20s%C3%A3o%3A%20Groselha%20Preta%2C%20Laranja%2C%20Mandarina%2C%20Toranja%2C%20C%C3%A1ssia%20e%20Bergamota.%20As%20notas%20de%20cora%C3%A7%C3%A3o%20s%C3%A3o%3A%20Rosa%2C%20Damasco%2C%20Jasmim%2C%20L%C3%ADrio%20e%20L%C3%ADrio-do-Vale.%20As%20notas%20de%20fundo%20s%C3%A3o%3A%20Baunilha%2C%20Fava%20Tonka%2C%20Alm%C3%ADscar%2C%20%C3%82mbar%20e%20Cedro%20da%20Virg%C3%ADnia.&preco=179.90&imagem=assets/images/claro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>        
+
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/médio.png" alt="Perfume 11">
+                <div class="info">
+                    <div class="nome">11 - LADY MILLION</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=LADY%20MILLION&preco=179.90&imagem=assets/images/médio.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/escuro.png" alt="Perfume 12">
+                <div class="info">
+                    <div class="nome">12 - CHANCE CHANEL TREND</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=CHANCE%20CHANEL%20TREND&preco=179.90&imagem=assets/images/escuro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>        
+
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/claro.png" alt="Perfume 13">
+                <div class="info">
+                    <div class="nome">13 - 212 SEXY</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=212%20SEXY&preco=179.90&imagem=assets/images/claro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/médio.png" alt="Perfume 14">
+                <div class="info">
+                    <div class="nome">14 - LADY GAGA - FAME</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=LADY%20GAGA%20FAME&preco=179.90&imagem=assets/images/médio.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/escuro.png" alt="Perfume 15">
+                <div class="info">
+                    <div class="nome">15 - BLACK XS - PACO RABANNE</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=BLACK%20XS%20PACO%20RABANNE&preco=179.90&imagem=assets/images/escuro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>        
+
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/claro.png" alt="Perfume 16">
+                <div class="info">
+                    <div class="nome">16 - ALLURE</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=ALLURE&preco=179.90&imagem=assets/images/claro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/médio.png" alt="Perfume 17">
+                <div class="info">
+                    <div class="nome">17 - PRADA PARADOXI</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=PRADA%20PARADOXI&preco=179.90&imagem=assets/images/médio.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>        
+
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/escuro.png" alt="Perfume 18">
+                <div class="info">
+                    <div class="nome">18 - ANJO CELESTE</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=ANJO%20CELESTE&preco=179.90&imagem=assets/images/escuro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>        
+
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/claro.png" alt="Perfume 19">
+                <div class="info">
+                    <div class="nome">19 - SCANDAL BY NIGHT</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=SCANDAL%20BY%20NIGHT&preco=179.90&imagem=assets/images/claro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>        
+
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/médio.png" alt="Perfume 20">
+                <div class="info">
+                    <div class="nome">20 - L'INTERDIT</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=L'INTERDIT&preco=179.90&imagem=assets/images/médio.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>        
+
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/escuro.png" alt="Perfume 21">
+                <div class="info">
+                    <div class="nome">21 - CHLOÉ</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=CHLOÉ&preco=179.90&imagem=assets/images/escuro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>        
+
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/claro.png" alt="Perfume 22">
+                <div class="info">
+                    <div class="nome">22 - ROYAL ÂMBER</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=ROYAL%20ÂMBER&preco=179.90&imagem=assets/images/claro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>        
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/médio.png" alt="Perfume 23">
+                <div class="info">
+                    <div class="nome">23 - DYLAN BLUE</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=DYLAN%20BLUE&preco=179.90&imagem=assets/images/médio.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>        
+
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/escuro.png" alt="Perfume 24">
+                <div class="info">
+                    <div class="nome">24 - LILY ESSENCE</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=LILY%20ESSENCE&preco=179.90&imagem=assets/images/escuro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>        
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/claro.png" alt="Perfume 25">
+                <div class="info">
+                    <div class="nome">25 - DELINA LA ROSE</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=DELINA%20LA%20ROSE&preco=179.90&imagem=assets/images/claro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>        
+
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/médio.png" alt="Perfume 26">
+                <div class="info">
+                    <div class="nome">26 - PRADA PARADOXI INTENSE</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=PRADA%20PARADOXI%20INTENSE&preco=179.90&imagem=assets/images/médio.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>        
+
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/escuro.png" alt="Perfume 27">
+                <div class="info">
+                    <div class="nome">27 - DELINA</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=DELINA&preco=179.90&imagem=assets/images/escuro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/claro.png" alt="Perfume 28">
+                <div class="info">
+                    <div class="nome">28 - PRADA CANDY</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=PRADA%20CANDY&preco=179.90&imagem=assets/images/claro.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-4 mb-4">
+            <div class="produto">
+                <img src="assets/images/médio.png" alt="Perfume 29">
+                <div class="info">
+                    <div class="nome">29 - LIBRE</div>
+                    <div class="descricao">[Preencha a descrição aqui]</div>
+                    <div class="preco">R$ 179,90</div>
+                    <a href="finalizar-compra.html?produto=LIBRE&preco=179.90&imagem=assets/images/médio.png" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>        
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Logo isolada -->
+            <div class="col-md-3 text-center text-md-start mb-4">
+                <img src="assets/images/logo.png" alt="Logo LA Essências" style="max-width: 180px;">
+            </div>
+
+            <!-- Conteúdo principal -->
+            <div class="col-md-9">
+                <div class="row text-center text-md-start">
+                    <div class="col-md-4 mb-4">
+                        <h5 class="text-uppercase font-weight-bold">LA Essências</h5>
+                        <p>Perfumes e essências de qualidade que definem seu estilo.</p>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <h5 class="text-uppercase font-weight-bold">Navegação</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="index.html" class="text-light text-decoration-none hover-underline-animation">Página Inicial</a></li>
+                            <li><a href="catalogo-feminino.html" class="text-light text-decoration-none hover-underline-animation">Catálogo Feminino</a></li>
+                            <li><a href="catalogo-masculino.html" class="text-light text-decoration-none hover-underline-animation">Catálogo Masculino</a></li>
+                            <li><a href="https://api.whatsapp.com/send/?phone=5534991407200&text&type=phone_number&app_absent=0" class="text-light text-decoration-none hover-underline-animation">WhatsApp</a></li>
+                            <li><a href="https://www.instagram.com/laessencias.oficial/" class="text-light text-decoration-none hover-underline-animation">Instagram</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <h5 class="text-uppercase font-weight-bold">Contato</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-phone-alt"></i> (34) 99140-7200</li>
+                            <li><i class="fas fa-envelope"></i> leandra.andre.essencias@gmail.com</li>
+                            <li><i class="fas fa-map-marker-alt"></i>Avenida 03, N° 5420 - Jardim América<br>Itapagipe - MG, 38240-000</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="bg-light">
+
+        <div class="row">
+            <div class="col text-center">
+                <p class="mb-0">© 2024 LA Essências. Todos os direitos reservados.</p>
+                <p><a href="politica-privacidade.html" class="text-light text-decoration-none hover-underline-animation">Política de Privacidade</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- CSS para hover e animação -->
+<style>
+    .hover-underline-animation {
+        position: relative;
+        display: inline-block;
+    }
+    .hover-underline-animation:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease-out;
+    }
+    .hover-underline-animation:hover:before {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+</style>
+
+<!-- Theme -->
+    <script>
+        const themeToggleButton = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        
+        // Verifica o tema salvo no localStorage
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+            document.body.classList.add('theme-dark');
+            themeIcon.classList.replace('bi-moon-fill', 'bi-sun-fill'); // Altera para ícone de Sol
+        }
+    
+        // Alternar tema ao clicar no botão
+        themeToggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('theme-dark');
+            
+            if (document.body.classList.contains('theme-dark')) {
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.replace('bi-moon-fill', 'bi-sun-fill'); // Ícone Sol
+            } else {
+                localStorage.removeItem('theme');
+                themeIcon.classList.replace('bi-sun-fill', 'bi-moon-fill'); // Ícone Lua
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const query = params.get('q');
+
+        if (query) {
+            const produtos = document.querySelectorAll('.produto');
+            produtos.forEach(produto => {
+                const nome = produto.querySelector('.nome').textContent.toLowerCase();
+                if (!nome.includes(query.toLowerCase())) {
+                    produto.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
